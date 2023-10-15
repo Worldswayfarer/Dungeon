@@ -19,6 +19,10 @@ func _process(delta):
 		direction.x += 1
 	
 	
-	direction.normalized()
+	direction = direction.normalized()
 	
 	position += direction * _speed * delta
+
+
+func _on_timer_timeout():
+	Signals.player_position_updated.emit(position)
