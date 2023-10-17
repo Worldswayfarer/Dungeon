@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmx7vns21i2jo"]
+
+[ext_resource type="Script" path="res://Enemy/enemy_controller.gd" id="1_3p2gq"]
+[ext_resource type="PackedScene" uid="uid://d28c32hsqlljs" path="res://Enemy/enemy.tscn" id="2_ytabf"]
+
+[node name="EnemyController" type="Node2D"]
+script = ExtResource("1_3p2gq")
+_enemy_scene = ExtResource("2_ytabf")

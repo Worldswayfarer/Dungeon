@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://xrwjy5x2sv73"]
+[gd_scene load_steps=4 format=3 uid="uid://xrwjy5x2sv73"]
 
-[ext_resource type="PackedScene" uid="uid://d28c32hsqlljs" path="res://Enemy/enemy.tscn" id="1_4cfu0"]
 [ext_resource type="PackedScene" uid="uid://q3eo71wplsvs" path="res://Player/player.tscn" id="2_hqu26"]
+[ext_resource type="PackedScene" uid="uid://bmx7vns21i2jo" path="res://Enemy/enemy_controller.tscn" id="2_tywea"]
+[ext_resource type="PackedScene" uid="uid://5lu84eomwsmw" path="res://Menu/hud.tscn" id="3_00mdr"]
 
 [node name="MainGame" type="Node2D"]
 
-[node name="Enemy" parent="." instance=ExtResource("1_4cfu0")]
-
 [node name="Player" parent="." instance=ExtResource("2_hqu26")]
+
+[node name="EnemyController" parent="." instance=ExtResource("2_tywea")]
+
+[node name="HUD" parent="." instance=ExtResource("3_00mdr")]
