@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d28c32hsqlljs"]
+[gd_scene load_steps=7 format=3 uid="uid://d28c32hsqlljs"]
 
 [ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Enemy/enemy.svg" id="1_dqwwd"]
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_ejg7w"]
+[ext_resource type="Script" path="res://Entity.gd" id="1_oxal1"]
+[ext_resource type="Resource" uid="uid://bjyys3aakpe4a" path="res://Enemy/enemy1_stats.tres" id="2_0bnhd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x4b2"]
 animations = [{
@@ -22,7 +24,8 @@ gravity_scale = 0.0
 max_contacts_reported = 20
 contact_monitor = true
 lock_rotation = true
-script = ExtResource("1_ejg7w")
+script = ExtResource("1_oxal1")
+Stats = ExtResource("2_0bnhd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3x4b2")
@@ -30,4 +33,5 @@ sprite_frames = SubResource("SpriteFrames_3x4b2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fffg7")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Controls" type="Node2D" parent="."]
+script = ExtResource("1_ejg7w")

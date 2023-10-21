@@ -19,11 +19,6 @@ func updatePlayerPosition(player_position):
 	Player_position = player_position
 
 
-func _process(_delta):
-	if Input.is_action_just_pressed("Spawn"):
-		spawnEnemies()
-
-
 func spawnEnemies(count = 10):
 	for number in range(count):
 		var new_enemy = _enemy_scene.instantiate()

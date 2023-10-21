@@ -8,7 +8,6 @@ func _process(_delta):
 	handleMovement()
 
 
-
 func _physics_process(_delta):
 	linear_velocity = Direction * Speed
 
@@ -30,6 +29,11 @@ func handleMovement():
 		Direction.x = 0
 	
 	Direction = Direction.normalized()
+
+
+func handleAbility():
+	if Input.is_action_just_pressed("UseAbility1"):
+		pass
 
 
 func _on_timer_timeout():

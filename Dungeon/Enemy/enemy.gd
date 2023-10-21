@@ -1,22 +1,12 @@
-extends RigidBody2D
+extends Node2D
 
-
-@export var Speed = 100.0
-var Direction = Vector2.ZERO
-
+var Parent = null
 
 func _ready():
 	Signals.Player_position_updated.connect(changeDirection)
+	Parent = get_parent()
 
 
 func changeDirection(player_position):
-	Direction = player_position - position
-	Direction = Direction.normalized()
-	
-
-func _physics_process(_delta):
-	linear_velocity = Direction * Speed
-
-
-func _on_body_entered(_body):
-	pass
+	var direction = player_position - position
+	Parent.Direction = direction.normalized()
