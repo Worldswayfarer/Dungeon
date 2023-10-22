@@ -1,40 +1,33 @@
-extends RigidBody2D
+extends Node2D
 
-@export var Speed: float = 400.0
-@export var Direction: Vector2 = Vector2.ZERO
+var Parent = null
 
+func _ready():
+	Parent = get_parent()
 
 func _process(_delta):
 	handleMovement()
 
 
-func _physics_process(_delta):
-	linear_velocity = Direction * Speed
-
-
 func handleMovement():
+	var direction = Vector2.ZERO
 	if Input.is_action_pressed("move_up"):
-		Direction.y -= 1
+		direction.y -= 1
 	elif Input.is_action_pressed("move_down"):
-		Direction.y += 1
+		direction.y += 1
 	else:
-		Direction.y = 0
+		direction.y = 0
 	
 	
 	if Input.is_action_pressed("move_left"):
-		Direction.x -= 1
+		direction.x -= 1
 	elif Input.is_action_pressed("move_right"):
-		Direction.x += 1
+		direction.x += 1
 	else:
-		Direction.x = 0
+		direction.x = 0
 	
-	Direction = Direction.normalized()
-
-
-func handleAbility():
-	if Input.is_action_just_pressed("UseAbility1"):
-		pass
+	Parent.Direction = direction.normalized()
 
 
 func _on_timer_timeout():
-	Signals.Player_position_updated.emit(position)
+	Signals.Player_position_updated.emit(Parent.position)

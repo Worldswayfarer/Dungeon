@@ -8,7 +8,8 @@ var Direction = Vector2.ZERO
 
 
 func _physics_process(_delta):
-	linear_velocity = Direction * Stats.getStat(Enums.Stats.SPEED)
+	var speed = Stats.getStat(Enums.Stats.SPEED)
+	linear_velocity = Direction * speed[0] * speed[1]
 
 
 func applyDamage(damage):

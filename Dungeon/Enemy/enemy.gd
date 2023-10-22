@@ -8,5 +8,5 @@ func _ready():
 
 
 func changeDirection(player_position):
-	var direction = player_position - position
+	var direction = player_position - Parent.position
 	Parent.Direction = direction.normalized()

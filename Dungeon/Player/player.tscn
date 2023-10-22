@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://q3eo71wplsvs"]
+[gd_scene load_steps=7 format=3 uid="uid://q3eo71wplsvs"]
 
+[ext_resource type="Script" path="res://Entity.gd" id="1_el62g"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_snwsj"]
+[ext_resource type="Resource" uid="uid://bbv4ntpcbxwxc" path="res://Player/player_stats.tres" id="2_7kqqe"]
 [ext_resource type="Texture2D" uid="uid://crne7hj6afcrh" path="res://Player/icon.svg" id="2_751uf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_674q1"]
@@ -20,7 +22,8 @@ size = Vector2(64, 64)
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
 lock_rotation = true
-script = ExtResource("1_snwsj")
+script = ExtResource("1_el62g")
+Stats = ExtResource("2_7kqqe")
 
 [node name="Playermodel" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_674q1")
@@ -32,4 +35,7 @@ shape = SubResource("RectangleShape2D_6cbtp")
 wait_time = 0.5
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Controls" type="Node2D" parent="."]
+script = ExtResource("1_snwsj")
+
+[connection signal="timeout" from="Timer" to="Controls" method="_on_timer_timeout"]
