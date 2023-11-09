@@ -6,5 +6,6 @@ enum Stats
 	MAX_HEALTH,
 	SPEED,
 	DAMAGE,
-	ARMOR,
+	ARMOR
 }
+

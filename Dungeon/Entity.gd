@@ -5,7 +5,7 @@ extends RigidBody2D
 @export var Stats : EntityStats
 
 var Direction = Vector2.ZERO
-
+var OnHitEffects = []
 
 func _physics_process(_delta):
 	var speed = Stats.getStat(Enums.Stats.SPEED)
@@ -13,4 +13,10 @@ func _physics_process(_delta):
 
 
 func applyDamage(damage):
-	Stats.setStat(Enums.Stats.CURRENT_HEALTH, - damage)
+	if damage == 0: return
+	if Enums.Stats.CURRENT_HEALTH - damage <=0: death()
+	Stats.addStat(Enums.Stats.CURRENT_HEALTH, damage)
+
+
+func death():
+	pass

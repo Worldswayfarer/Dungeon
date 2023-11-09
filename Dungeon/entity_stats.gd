@@ -17,6 +17,7 @@ class_name EntityStats
 }
 
 
+
 func getStat(stat):
 	return Stats_sheet[stat]
 
@@ -26,10 +27,9 @@ func setStat(stat, value):
 
 
 func addStat(stat, value):
-	if Stats_sheet[stat][0] - value < 1: return
-	Stats_sheet[stat][0] += value
+	Stats_sheet[stat] += value
 
 
 func multStat(stat, value):
 	if value < 0: return
-	Stats_sheet[stat][1] *= value
+	Stats_sheet[stat] *= value

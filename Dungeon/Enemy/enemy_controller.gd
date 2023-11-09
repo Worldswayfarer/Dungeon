@@ -3,20 +3,13 @@ extends Node2D
 
 @export var _enemy_scene : PackedScene 
 
-
 var Screen_size = Vector2.ZERO
-var Player_position = Vector2.ZERO
 
 
 func _ready():
 	Screen_size = get_viewport_rect().size
-	Signals.Player_position_updated.connect(updatePlayerPosition)
 	randomize()
 	spawnEnemies()
-
-
-func updatePlayerPosition(player_position):
-	Player_position = player_position
 
 
 func spawnEnemies(count = 10):
