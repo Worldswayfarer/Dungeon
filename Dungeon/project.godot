@@ -19,7 +19,6 @@ config/icon="res://Player/icon.svg"
 
 Signals="*res://Signals.gd"
 Enums="*res://enums.gd"
-Stats="*res://Stats.cs"
 
 [display]
 

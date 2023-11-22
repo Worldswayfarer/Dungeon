@@ -2,17 +2,16 @@ extends RigidBody2D
 
 # the base class for all entities (player, enemies)
 
-@export var Stats : EntityStats
+var Stats : EntityStats = EntityStats.new()
 
-var Direction = Vector2.ZERO
-var OnHitEffects = []
+var _direction = Vector2.ZERO
 
 func _physics_process(_delta):
 	var speed = Stats.getStat(Enums.Stats.SPEED)
-	linear_velocity = Direction * speed[0] * speed[1]
+	linear_velocity = _direction * speed
 
 
-func applyDamage(damage):
+func apply_damage(damage):
 	if damage == 0: return
 	if Enums.Stats.CURRENT_HEALTH - damage <=0: death()
 	Stats.addStat(Enums.Stats.CURRENT_HEALTH, damage)

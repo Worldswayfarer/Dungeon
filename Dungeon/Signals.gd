@@ -1,4 +1,4 @@
 extends Node
 
 
-signal Player_position_updated(player_position)
+signal player_position_updated(player_position)
