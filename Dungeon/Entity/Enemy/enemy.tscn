@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://d28c32hsqlljs"]
+[gd_scene load_steps=7 format=3 uid="uid://dubwal58kx7sa"]
 
-[ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Enemy/enemy.svg" id="1_dqwwd"]
-[ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_ejg7w"]
-[ext_resource type="Script" path="res://Entity.gd" id="1_oxal1"]
+[ext_resource type="Script" path="res://Entity/Entity.gd" id="1_6yw7x"]
+[ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Entity/Enemy/enemy.svg" id="2_g44qq"]
+[ext_resource type="Script" path="res://Entity/Enemy/enemy.gd" id="3_rqlpr"]
+[ext_resource type="Script" path="res://Entity/health_component.gd" id="4_sve4d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x4b2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dqwwd")
+"texture": ExtResource("2_g44qq")
 }],
 "loop": true,
 "name": &"default",
@@ -23,7 +24,7 @@ gravity_scale = 0.0
 max_contacts_reported = 20
 contact_monitor = true
 lock_rotation = true
-script = ExtResource("1_oxal1")
+script = ExtResource("1_6yw7x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3x4b2")
@@ -32,4 +33,7 @@ sprite_frames = SubResource("SpriteFrames_3x4b2")
 shape = SubResource("CircleShape2D_fffg7")
 
 [node name="Controls" type="Node2D" parent="."]
-script = ExtResource("1_ejg7w")
+script = ExtResource("3_rqlpr")
+
+[node name="HealthComponent" type="Node2D" parent="."]
+script = ExtResource("4_sve4d")

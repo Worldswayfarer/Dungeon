@@ -6,10 +6,10 @@ func _ready():
 	_parent = get_parent()
 
 func _process(_delta):
-	handleMovement()
+	handle_movement()
 
 
-func handleMovement():
+func handle_movement():
 	var direction = Vector2.ZERO
 	direction.y = 0
 	if Input.is_action_pressed("move_up"):

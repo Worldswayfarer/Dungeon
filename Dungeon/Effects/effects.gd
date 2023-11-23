@@ -12,4 +12,4 @@ func _init(stat_name, base = 1, multiplier = 1):
 
 
 func apply_effects(parent_stats : EntityStats):
-	parent_stats.modifyStat(_statName, _base, _multiplier)
+	parent_stats.modify_stat(_statName, _base, _multiplier)
