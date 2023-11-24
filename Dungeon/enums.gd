@@ -1,3 +1,5 @@
+extends Node
+
 enum Stats
 {
 	CURRENT_HEALTH,

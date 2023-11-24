@@ -1,6 +1,7 @@
 extends Node2D
 
 var _parent = null
+var _bullet_scene = preload("res://Bullet.tscn")
 
 func _ready():
 	_parent = get_parent()
@@ -23,7 +24,16 @@ func handle_movement():
 	elif Input.is_action_pressed("move_right"):
 		direction.x += 1
 	
+	if Input.is_action_just_pressed("Shoot"):
+		shoot()
+	
 	_parent._direction = direction.normalized()
+
+
+func shoot():
+		var new_enemy = _bullet_scene.instantiate()
+		add_child(new_enemy)
+		new_enemy.setup()
 
 
 func _on_timer_timeout():

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://viabfeu5qm28"]
+
+[ext_resource type="PackedScene" uid="uid://bmx7vns21i2jo" path="res://Entity/Enemy/enemy_controller.tscn" id="1_jaw2k"]
+[ext_resource type="PackedScene" uid="uid://dqti8o26cx6fd" path="res://Entity/Player/player.tscn" id="2_tlqwr"]
+
+[node name="main" type="Node2D"]
+
+[node name="EnemyController" parent="." instance=ExtResource("1_jaw2k")]
+
+[node name="Player" parent="." instance=ExtResource("2_tlqwr")]
