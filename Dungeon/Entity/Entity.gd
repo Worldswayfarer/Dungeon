@@ -5,6 +5,7 @@ extends CharacterBody2D
 var _stats : EntityStats = EntityStats.new()
 
 var _incoming_effects = []
+var _active_effects = []
 
 var _direction = Vector2.ZERO
 
