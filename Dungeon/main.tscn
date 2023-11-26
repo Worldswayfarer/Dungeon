@@ -5,6 +5,8 @@
 
 [node name="main" type="Node2D"]
 
-[node name="EnemyController" parent="." instance=ExtResource("1_jaw2k")]
+[node name="object_controller" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("2_tlqwr")]
+[node name="EnemyController" parent="object_controller" instance=ExtResource("1_jaw2k")]
+
+[node name="Player" parent="object_controller" instance=ExtResource("2_tlqwr")]

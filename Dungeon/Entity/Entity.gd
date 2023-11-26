@@ -16,5 +16,5 @@ func _physics_process(delta):
 
 func _process(_delta):
 	for effect in _incoming_effects:
-		get_node("HealthComponent").apply_damage(effect._damage)
+		effect.apply_effect(self)
 	_incoming_effects = []

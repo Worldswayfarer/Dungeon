@@ -1,17 +1,20 @@
 extends Area2D
 
-var _damage
+
 var _direction : Vector2
 var _speed = 100
 var _flight_time = 2.
+var _effects : Array = []
 
 
-func setup():
-	_direction = get_viewport().get_mouse_position() - global_position
+func setup(new_position, effects : Array = [], mask = 0b100):
+	position = new_position
+	_direction = get_viewport().get_mouse_position() - position
 	rotation = _direction.angle()
 	_direction = _direction.normalized()
-	_damage = DamageEffect.new(1)
-	collision_mask = 0b100
+	
+	_effects = effects
+	collision_mask = mask
 
 
 func _process(delta):
@@ -22,4 +25,4 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	body._incoming_effects += [_damage]
+	body._incoming_effects.append_array(_effects)

@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dubwal58kx7sa"]
+[gd_scene load_steps=6 format=3 uid="uid://dubwal58kx7sa"]
 
 [ext_resource type="Script" path="res://Entity/Entity.gd" id="1_6yw7x"]
 [ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Entity/Enemy/enemy.svg" id="2_g44qq"]
 [ext_resource type="Script" path="res://Entity/Enemy/enemy.gd" id="3_rqlpr"]
-[ext_resource type="Script" path="res://Entity/health_component.gd" id="4_sve4d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x4b2"]
 animations = [{
@@ -32,6 +31,3 @@ shape = SubResource("CircleShape2D_fffg7")
 
 [node name="Controls" type="Node2D" parent="."]
 script = ExtResource("3_rqlpr")
-
-[node name="HealthComponent" type="Node2D" parent="."]
-script = ExtResource("4_sve4d")

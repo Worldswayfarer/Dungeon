@@ -2,9 +2,13 @@ extends Node2D
 
 var _parent = null
 var _bullet_scene = preload("res://Bullet.tscn")
+var _object_controller = null
+
 
 func _ready():
 	_parent = get_parent()
+	_object_controller = get_parent().get_parent()
+
 
 func _process(_delta):
 	handle_movement()
@@ -32,8 +36,11 @@ func handle_movement():
 
 func shoot():
 		var new_enemy = _bullet_scene.instantiate()
-		add_child(new_enemy)
-		new_enemy.setup()
+		_object_controller.add_child(new_enemy)
+		var effect = []
+		effect += [DamageEffect.new(_parent._stats.get_stat(Enums.Stats.DAMAGE))]
+		effect += [StatModifierEffect.new(Enums.Stats.SPEED, 0, 0.1)]
+		new_enemy.setup(global_position, effect)
 
 
 func _on_timer_timeout():

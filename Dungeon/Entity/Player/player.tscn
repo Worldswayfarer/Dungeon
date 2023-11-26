@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqti8o26cx6fd"]
+[gd_scene load_steps=6 format=3 uid="uid://dqti8o26cx6fd"]
 
 [ext_resource type="Script" path="res://Entity/Entity.gd" id="1_7gjuw"]
 [ext_resource type="Texture2D" uid="uid://crne7hj6afcrh" path="res://Entity/Player/icon.svg" id="2_dxqhq"]
 [ext_resource type="Script" path="res://Entity/Player/player.gd" id="3_enlii"]
-[ext_resource type="Script" path="res://Entity/health_component.gd" id="4_mjqao"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_674q1"]
 animations = [{
@@ -36,8 +35,5 @@ autostart = true
 
 [node name="Controls" type="Node2D" parent="."]
 script = ExtResource("3_enlii")
-
-[node name="HealthComponent" type="Node2D" parent="."]
-script = ExtResource("4_mjqao")
 
 [connection signal="timeout" from="Timer" to="Controls" method="_on_timer_timeout"]

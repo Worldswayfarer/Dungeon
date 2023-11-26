@@ -13,7 +13,7 @@ func _init(init_stats : Dictionary = {}):
 	set_stat(Enums.Stats.CURRENT_HEALTH, 10, 1)
 	set_stat(Enums.Stats.MAX_HEALTH, 10, 1)
 	set_stat(Enums.Stats.SPEED, 100, 1)
-	set_stat(Enums.Stats.DAMAGE, 10, 1)
+	set_stat(Enums.Stats.DAMAGE, 1, 1)
 	set_stat(Enums.Stats.ARMOR, 10, 1)
 	#only temporary till i have implemented the stat load system
 
