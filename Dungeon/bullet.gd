@@ -26,12 +26,5 @@ func _process(delta):
 
 func _on_body_entered(body):
 	for effect in _effects:
-		if effect is DamgeOverTimeEffect:
-			var new = DamgeOverTimeEffect.new(effect._damage_effect, effect._duration)
-			body._incoming_effects.append(new)
-			continue
-		if effect is TemporaryEffect:
-			var new = TemporaryEffect.new(effect._effect, effect._duration)
-			body._incoming_effects.append(new)
-			continue
-		body._incoming_effects.append(effect)
+		var new = effect.duplicate()
+		body._incoming_effects.append(new)

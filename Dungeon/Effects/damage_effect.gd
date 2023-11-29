@@ -1,10 +1,13 @@
-extends Node2D
 class_name DamageEffect
 
 var _damage
 
 func _init(damage):
 	_damage = damage
+
+
+func duplicate():
+	return DamageEffect.new(_damage)
 
 
 func apply_effect(target):

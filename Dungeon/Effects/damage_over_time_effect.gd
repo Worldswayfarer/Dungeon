@@ -1,4 +1,4 @@
-class_name DamgeOverTimeEffect
+class_name DamageOverTimeEffect
 
 var _damage_effect
 var _duration
@@ -8,6 +8,10 @@ var _target
 func _init(damage_effect : DamageEffect, duration : float):
 	_damage_effect = damage_effect
 	_duration = duration
+
+
+func duplicate():
+	return DamageOverTimeEffect.new(_damage_effect, _duration)
 
 
 func apply_effect(target : Entity):

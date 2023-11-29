@@ -10,6 +10,10 @@ func _init(effect : StatModifierEffect, duration : float):
 	_duration = duration
 
 
+func duplicate():
+	return TemporaryEffect.new(_effect, _duration)
+
+
 func apply_effect(target : Entity):
 	_target = target
 	_target._active_effects += [self]
