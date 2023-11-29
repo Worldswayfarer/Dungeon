@@ -31,7 +31,7 @@ func get_full_stat(stat):
 	return _stats_sheet[stat]
 
 
-func modify_stat(stat, base = 0, modifier = 1):
+func modify_stat(stat, base = 0, modifier = 1.):
 	_stats_sheet[stat][0] += base
 	if modifier > 0:
 		_stats_sheet[stat][1] *= modifier

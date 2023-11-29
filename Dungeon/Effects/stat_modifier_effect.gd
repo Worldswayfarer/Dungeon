@@ -17,3 +17,7 @@ func _init(stat_name, base : int = 1, modifier : float = 1):
 
 func apply_effect(target):
 	target._stats.modify_stat(_statName, _base, _modifier)
+
+
+func reverse_effect(target):
+	target._stats.modify_stat(_statName, -_base, 1/_modifier)

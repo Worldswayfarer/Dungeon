@@ -38,8 +38,8 @@ func shoot():
 		var new_enemy = _bullet_scene.instantiate()
 		_object_controller.add_child(new_enemy)
 		var effect = []
-		effect += [DamageEffect.new(_parent._stats.get_stat(Enums.Stats.DAMAGE))]
-		effect += [StatModifierEffect.new(Enums.Stats.SPEED, 0, 0.1)]
+		effect += [DamgeOverTimeEffect.new(DamageEffect.new(_parent._stats.get_stat(Enums.Stats.DAMAGE)), 5)]
+		effect += [TemporaryEffect.new(StatModifierEffect.new(Enums.Stats.SPEED, 0, 0.25), 5)]
 		new_enemy.setup(global_position, effect)
 
 
