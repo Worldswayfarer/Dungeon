@@ -5,7 +5,6 @@ class_name Entity
 
 var _stats : EntityStats = EntityStats.new()
 
-var _incoming_effects = []
 var _active_effects = []
 
 var _direction = Vector2.ZERO
@@ -15,10 +14,13 @@ func _physics_process(delta):
 	move_and_collide(_direction*speed * delta)
 
 
+func add_effects(effects):
+	for effect in effects:
+		var new = effect.duplicate()
+		new.apply_effect(self)
+
+
 func _process(delta):
-	for effect in _incoming_effects:
-		effect.apply_effect(self)
-	_incoming_effects = []
 	
 	var index = _active_effects.size() - 1
 	while index >= 0 :

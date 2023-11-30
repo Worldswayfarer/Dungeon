@@ -28,4 +28,4 @@ func timer(delta):
 		_timer = 0.
 		if !_target:
 			return
-		_target._incoming_effects += [_damage_effect]
+		_target.add_effects([_damage_effect])
