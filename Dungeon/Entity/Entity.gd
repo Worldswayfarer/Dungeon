@@ -7,7 +7,7 @@ var _stats : EntityStats = EntityStats.new()
 
 var _active_effects = []
 
-var _direction = Vector2.ZERO
+var _direction : Vector2 = Vector2.ZERO
 
 func _physics_process(delta):
 	var speed = _stats.get_stat(Enums.Stats.SPEED)

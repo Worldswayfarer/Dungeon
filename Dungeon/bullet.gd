@@ -6,7 +6,6 @@ var _speed = 100
 var _flight_time = 2.
 var _effects : Array = []
 
-
 func setup(new_position, effects : Array = [], mask = 0b100):
 	position = new_position
 	_direction = get_viewport().get_mouse_position() - position

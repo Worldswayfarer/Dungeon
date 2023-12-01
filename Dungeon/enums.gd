@@ -14,3 +14,9 @@ enum EntityTypes
 	PLAYER,
 	ENEMY,
 }
+
+enum Effects
+{
+	Bleed,
+	Slow,
+}
