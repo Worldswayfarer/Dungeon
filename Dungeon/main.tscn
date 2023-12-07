@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://viabfeu5qm28"]
+[gd_scene load_steps=6 format=3 uid="uid://viabfeu5qm28"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_axwjr"]
 [ext_resource type="PackedScene" uid="uid://bmx7vns21i2jo" path="res://Entity/Enemy/enemy_controller.tscn" id="1_jaw2k"]
 [ext_resource type="PackedScene" uid="uid://dqti8o26cx6fd" path="res://Entity/Player/player.tscn" id="2_tlqwr"]
+[ext_resource type="PackedScene" uid="uid://c5pu500chidna" path="res://map.tscn" id="2_topev"]
+[ext_resource type="PackedScene" uid="uid://5lu84eomwsmw" path="res://Menu/hud.tscn" id="5_4omln"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_axwjr")
+
+[node name="Map" parent="." instance=ExtResource("2_topev")]
 
 [node name="object_controller" type="Node2D" parent="."]
 
 [node name="EnemyController" parent="object_controller" instance=ExtResource("1_jaw2k")]
 
 [node name="Player" parent="object_controller" instance=ExtResource("2_tlqwr")]
+
+[node name="HUD" parent="." instance=ExtResource("5_4omln")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
