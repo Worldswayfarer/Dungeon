@@ -16,7 +16,7 @@ func _ready():
 func spawnEnemies(count = 10):
 	for number in range(count):
 		var new_enemy = _enemy_scene.instantiate()
-		var new_position = Vector2(randi_range(Screen_size.x + _offset, Screen_size.x - _offset) - Screen_size.x,
-				 randi_range(Screen_size.y + _offset, Screen_size.y - _offset) - Screen_size.y)
+		var new_position = Vector2(randi_range(_offset, Screen_size.x - _offset),
+				 randi_range(_offset, Screen_size.y - _offset))
 		new_enemy.position = new_position
 		add_child(new_enemy)
