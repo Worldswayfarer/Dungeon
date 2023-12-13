@@ -17,6 +17,6 @@ position = Vector2(960, 540)
 [node name="EnemyController" parent="object_controller" instance=ExtResource("1_jaw2k")]
 
 [node name="Player" parent="object_controller" instance=ExtResource("2_tlqwr")]
-position = Vector2(500, 500)
+position = Vector2(1000, 500)
 
 [node name="HUD" parent="." instance=ExtResource("5_4omln")]

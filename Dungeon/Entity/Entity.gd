@@ -7,7 +7,15 @@ var _stats : EntityStats = EntityStats.new()
 
 var _active_effects = []
 
+var _type : Enums.EntityTypes
+
 var _direction : Vector2 = Vector2.ZERO
+
+
+func setup(type : Enums.EntityTypes):
+	_type = type
+
+
 
 func _physics_process(delta):
 	var speed = _stats.get_stat(Enums.Stats.SPEED)

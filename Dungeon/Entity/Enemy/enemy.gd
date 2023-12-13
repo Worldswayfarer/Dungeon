@@ -7,6 +7,10 @@ func _ready():
 	_parent = get_parent()
 
 
+func _exit_tree():
+	Signals.enemy_death.emit(_parent)
+
+
 func change_direction(player_position):
 	var direction = player_position - _parent.position
 	_parent._direction = direction.normalized()

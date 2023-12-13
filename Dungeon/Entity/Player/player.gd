@@ -7,6 +7,7 @@ var _object_controller = null
 
 func _ready():
 	_parent = get_parent()
+	_parent._type = Enums.EntityTypes.PLAYER
 	_object_controller = get_parent().get_parent()
 
 

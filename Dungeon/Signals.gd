@@ -2,4 +2,5 @@ extends Node
 
 
 signal player_position_updated(player_position)
-signal entity_death(entity)
+signal enemy_death(entity)
+signal player_death()

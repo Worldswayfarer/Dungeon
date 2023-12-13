@@ -17,6 +17,6 @@ func apply_effect(target):
 	
 	# death is handled by the game controller
 	if current_health[0] - health_loss <= 0:
-		Signals.entity_death.emit(target)
+		Signals.enemy_death.emit(target)
 		target.queue_free()
 	target._stats.modify_stat(Enums.Stats.CURRENT_HEALTH, -health_loss)

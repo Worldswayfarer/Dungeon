@@ -4,7 +4,6 @@ class_name EntityStats
 # and the combined value [c] (which is used for the calculations) c
 # is always 1<=c. Death is handled by the damage function.
 
-var type
 
 @export var _stats_sheet : Dictionary = {}
 

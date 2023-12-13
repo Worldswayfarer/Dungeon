@@ -14,6 +14,5 @@ func apply_damage(_damage):
 	
 	# death is handled by the game controller
 	if current_health[0] - health_loss <= 0:
-		Signals.entity_death.emit(_parent)
 		_parent.queue_free()
 	_parent._stats.modify_stat(Enums.Stats.CURRENT_HEALTH, -health_loss)
