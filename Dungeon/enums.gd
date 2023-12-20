@@ -15,6 +15,12 @@ enum EntityTypes
 	ENEMY,
 }
 
+enum ObjectTypes
+{
+	BASE,
+	BULLET,
+}
+
 enum Effects
 {
 	Bleed,

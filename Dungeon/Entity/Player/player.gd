@@ -1,14 +1,13 @@
 extends Node2D
 
 var _parent = null
-var _bullet_scene = preload("res://Bullet.tscn")
-var _object_controller = null
+var _factory = null
 
 
 func _ready():
 	_parent = get_parent()
 	_parent._type = Enums.EntityTypes.PLAYER
-	_object_controller = get_parent().get_parent()
+	_factory = get_node("/root/main/ObjectFactory")
 
 
 func _process(_delta):
@@ -36,8 +35,8 @@ func handle_movement():
 
 
 func shoot():
-		var new_enemy = _bullet_scene.instantiate()
-		_object_controller.add_child(new_enemy)
+		var new_enemy = _factory.get_object_instance(Enums.ObjectTypes.BULLET)
+		_factory.add_child(new_enemy)
 		var effect = []
 		effect += [DamageOverTimeEffect.new(
 				DamageEffect.new(_parent._stats.get_stat(Enums.Stats.DAMAGE))

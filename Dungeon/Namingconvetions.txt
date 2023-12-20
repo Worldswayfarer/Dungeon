@@ -1,4 +1,4 @@
-classes: StateMachine
+classes/nodes: StateMachine
 functions/signals: apply_this
 class fields: _stat_value
 local var: stat_value
