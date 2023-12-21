@@ -37,6 +37,7 @@ func handle_movement():
 func shoot():
 		var new_enemy = _factory.get_object_instance(Enums.ObjectTypes.BULLET)
 		_factory.add_child(new_enemy)
+		
 		var effect = []
 		effect += [DamageOverTimeEffect.new(
 				DamageEffect.new(_parent._stats.get_stat(Enums.Stats.DAMAGE))
@@ -44,6 +45,7 @@ func shoot():
 		effect += [TemporaryEffect.new(
 				StatModifierEffect.new(Enums.Stats.SPEED, 0, 0.25)
 			, Enums.Effects.Slow, 5)]
+		
 		new_enemy.setup(global_position, effect)
 
 
