@@ -1,28 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://viabfeu5qm28"]
+[gd_scene load_steps=8 format=3 uid="uid://viabfeu5qm28"]
 
 [ext_resource type="PackedScene" uid="uid://dqti8o26cx6fd" path="res://Entity/Player/player.tscn" id="2_tlqwr"]
 [ext_resource type="PackedScene" uid="uid://c5pu500chidna" path="res://map.tscn" id="2_topev"]
-[ext_resource type="PackedScene" uid="uid://5lu84eomwsmw" path="res://Menu/hud.tscn" id="5_4omln"]
 [ext_resource type="Script" path="res://Entity/Enemy/wave_spawner.gd" id="5_qcuv6"]
+[ext_resource type="Script" path="res://WaveManagement.gd" id="6_gp5wm"]
 [ext_resource type="Script" path="res://object_factory.gd" id="6_x244f"]
+[ext_resource type="Texture2D" uid="uid://di5mh25hudy2i" path="res://Menu/PauseMenuBackground.png" id="7_sgqs0"]
+[ext_resource type="Script" path="res://Menu/FPS_Counter.gd" id="8_aj6ya"]
 
 [node name="main" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource("2_topev")]
 position = Vector2(960, 540)
 
-[node name="HUD" parent="." instance=ExtResource("5_4omln")]
-
-[node name="ObjectFactory" type="Node2D" parent="."]
-script = ExtResource("6_x244f")
-
 [node name="WaveSpawner" type="Node2D" parent="."]
 script = ExtResource("5_qcuv6")
-
-[node name="Timer" type="Timer" parent="WaveSpawner"]
-autostart = true
 
 [node name="Player" parent="." instance=ExtResource("2_tlqwr")]
 position = Vector2(1000, 500)
 
-[connection signal="timeout" from="WaveSpawner/Timer" to="WaveSpawner" method="_on_timer_timeout"]
+[node name="ObjectFactory" type="Node2D" parent="."]
+script = ExtResource("6_x244f")
+
+[node name="WaveManagement" type="Node2D" parent="."]
+script = ExtResource("6_gp5wm")
+
+[node name="Menu" type="CanvasLayer" parent="."]
+
+[node name="PauseScreenBackground" type="Sprite2D" parent="Menu"]
+position = Vector2(960, 540)
+texture = ExtResource("7_sgqs0")
+
+[node name="FPS_Counter" type="Label" parent="Menu"]
+offset_right = 40.0
+offset_bottom = 26.0
+text = "000"
+script = ExtResource("8_aj6ya")
