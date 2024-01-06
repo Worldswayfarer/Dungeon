@@ -10,6 +10,7 @@ func _ready():
 	_wave_timer_current = _wave_timer_max
 
 
+
 func _process(delta):
 	_wave_timer_current -= delta
 	if _wave_timer_current >= 0:
