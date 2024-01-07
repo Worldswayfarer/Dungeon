@@ -1,17 +1,20 @@
 extends Node2D
 
 var _wave_pattern = []
-var _wave_timer_max = 15
-var _wave_timer_current
+var _section_timer_max = 15
+var _section_timer_current
 
 func _ready():
-	for i in range(10):
-		_wave_pattern += [[Enums.ObjectTypes.BASE, 10]]
-	_wave_timer_current = _wave_timer_max
+	_wave_pattern = [[Enums.ObjectTypes.BASE, 3]]
+	_section_timer_current = _section_timer_max
 
+
+func determine_next_wave():
+	var next = randi_range(0, _wave_pattern.size()-1)
+	return _wave_pattern[next]
 
 
 func _process(delta):
-	_wave_timer_current -= delta
-	if _wave_timer_current >= 0:
+	_section_timer_current -= delta
+	if _section_timer_current >= 0:
 		Signals.end_of_wave.emit()

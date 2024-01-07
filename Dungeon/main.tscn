@@ -15,17 +15,23 @@ process_mode = 1
 [node name="Map" parent="." instance=ExtResource("2_topev")]
 position = Vector2(960, 540)
 
-[node name="WaveSpawner" type="Node2D" parent="."]
-script = ExtResource("5_qcuv6")
-
 [node name="Player" parent="." instance=ExtResource("2_tlqwr")]
 position = Vector2(1000, 500)
+
+[node name="WaveManagement" type="Node2D" parent="."]
+script = ExtResource("6_gp5wm")
+
+[node name="WaveSpawner" type="Node2D" parent="WaveManagement"]
+script = ExtResource("5_qcuv6")
 
 [node name="ObjectFactory" type="Node2D" parent="."]
 script = ExtResource("6_x244f")
 
-[node name="WaveManagement" type="Node2D" parent="."]
-script = ExtResource("6_gp5wm")
+[node name="FPS_Counter" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 26.0
+text = "000"
+script = ExtResource("8_aj6ya")
 
 [node name="Menu" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -35,9 +41,3 @@ script = ExtResource("6_mgqpq")
 [node name="PauseScreenBackground" type="Sprite2D" parent="Menu"]
 position = Vector2(960, 540)
 texture = ExtResource("7_sgqs0")
-
-[node name="FPS_Counter" type="Label" parent="Menu"]
-offset_right = 40.0
-offset_bottom = 26.0
-text = "000"
-script = ExtResource("8_aj6ya")
