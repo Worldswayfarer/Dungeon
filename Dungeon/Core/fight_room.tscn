@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://coesoluyk25br"]
 
-[ext_resource type="Script" path="res://WaveManagement.gd" id="1_tybpu"]
-[ext_resource type="Script" path="res://Entity/Enemy/wave_spawner.gd" id="2_x60iu"]
+[ext_resource type="Script" path="res://Core/WaveManagement.gd" id="1_tybpu"]
+[ext_resource type="Script" path="res://Core/wave_spawner.gd" id="2_x60iu"]
 
 [node name="WaveManagement" type="Node2D"]
 script = ExtResource("1_tybpu")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://viabfeu5qm28"]
+
+[ext_resource type="PackedScene" uid="uid://c5pu500chidna" path="res://Map/map.tscn" id="1_sjd4x"]
+[ext_resource type="PackedScene" uid="uid://dqti8o26cx6fd" path="res://Entity/Player/player.tscn" id="2_rfaee"]
+[ext_resource type="PackedScene" uid="uid://coesoluyk25br" path="res://Core/fight_room.tscn" id="3_2ixu6"]
+[ext_resource type="Script" path="res://Core/object_factory.gd" id="4_h2x6r"]
+[ext_resource type="Script" path="res://Menu/FPS_Counter.gd" id="5_jcqve"]
+[ext_resource type="Script" path="res://Menu/Menu.gd" id="6_mahpr"]
+[ext_resource type="Texture2D" uid="uid://di5mh25hudy2i" path="res://Menu/PauseMenuBackground.png" id="7_totu5"]
+
+[node name="main" type="Node2D"]
+process_mode = 1
+
+[node name="Map" parent="." instance=ExtResource("1_sjd4x")]
+position = Vector2(960, 540)
+
+[node name="Player" parent="." instance=ExtResource("2_rfaee")]
+position = Vector2(1000, 500)
+
+[node name="WaveManagement" parent="." instance=ExtResource("3_2ixu6")]
+
+[node name="ObjectFactory" type="Node2D" parent="."]
+script = ExtResource("4_h2x6r")
+
+[node name="FPS_Counter" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 26.0
+text = "000"
+script = ExtResource("5_jcqve")
+
+[node name="Menu" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("6_mahpr")
+
+[node name="PauseScreenBackground" type="Sprite2D" parent="Menu"]
+position = Vector2(960, 540)
+texture = ExtResource("7_totu5")

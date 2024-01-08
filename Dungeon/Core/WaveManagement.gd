@@ -16,5 +16,5 @@ func determine_next_wave():
 
 func _process(delta):
 	_section_timer_current -= delta
-	if _section_timer_current >= 0:
+	if _section_timer_current <= 0:
 		Signals.end_of_wave.emit()
