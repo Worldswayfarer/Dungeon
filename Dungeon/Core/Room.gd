@@ -1,8 +1,18 @@
 extends Node2D
 
 
+var _portal_scene = preload("res://Core/portal.tscn")
+var _center_position = Vector2(960, 540)
+
 func _ready():
-	Signals.end_of_wave.connect(cleanup)
+	Signals.end_of_wave.connect(end_of_wave)
+
+
+func end_of_wave():
+	cleanup()
+	var new_portal = _portal_scene.instantiate()
+	new_portal.position = _center_position
+	add_child(new_portal)
 
 
 func cleanup():
