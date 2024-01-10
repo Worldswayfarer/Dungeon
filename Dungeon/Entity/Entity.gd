@@ -16,7 +16,6 @@ func setup(type : Enums.EntityTypes):
 	_type = type
 
 
-
 func _physics_process(delta):
 	var speed = _stats.get_stat(Enums.Stats.SPEED)
 	move_and_collide(_direction*speed * delta)
