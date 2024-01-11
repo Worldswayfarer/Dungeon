@@ -8,8 +8,13 @@ func _ready():
 	_room = get_node("/root/main/Room")
 	_room.add_child(_fight_room.instantiate())
 	Signals.access_next_room.connect(next_room)
+	Signals.player_death.connect(end_game)
 
 
 func next_room():
 	_room.cleanup()
 	_room.add_child(_fight_room.instantiate())
+
+
+func end_game():
+	get_tree().quit()

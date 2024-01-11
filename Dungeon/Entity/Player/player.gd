@@ -14,6 +14,10 @@ func _process(_delta):
 	handle_movement()
 
 
+func _exit_tree():
+	Signals.player_death.emit()
+
+
 func handle_movement():
 	var direction = Vector2.ZERO
 	direction.y = 0
