@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqti8o26cx6fd"]
+[gd_scene load_steps=9 format=3 uid="uid://dqti8o26cx6fd"]
 
 [ext_resource type="Script" path="res://Entity/Entity.gd" id="1_7gjuw"]
 [ext_resource type="Texture2D" uid="uid://crne7hj6afcrh" path="res://Entity/Player/icon.svg" id="2_dxqhq"]
 [ext_resource type="Script" path="res://Entity/Player/player.gd" id="3_enlii"]
+[ext_resource type="Script" path="res://Entity/attack_component.gd" id="4_71p6y"]
+[ext_resource type="Script" path="res://Entity/health_component.gd" id="5_3wbpb"]
+[ext_resource type="Script" path="res://Entity/movement_component.gd" id="6_b1va4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_674q1"]
 animations = [{
@@ -35,5 +38,14 @@ autostart = true
 
 [node name="Controls" type="Node2D" parent="."]
 script = ExtResource("3_enlii")
+
+[node name="AttackComponent" type="Node2D" parent="."]
+script = ExtResource("4_71p6y")
+
+[node name="HealthComponent" type="Node2D" parent="."]
+script = ExtResource("5_3wbpb")
+
+[node name="MovementComponent" type="Node2D" parent="."]
+script = ExtResource("6_b1va4")
 
 [connection signal="timeout" from="Timer" to="Controls" method="_on_timer_timeout"]

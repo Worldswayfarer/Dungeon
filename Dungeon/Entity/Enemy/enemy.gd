@@ -13,4 +13,4 @@ func _exit_tree():
 
 func change_direction(player_position):
 	var direction = player_position - _parent.position
-	_parent._direction = direction.normalized()
+	_parent.get_node("MovementComponent")._direction = direction.normalized()

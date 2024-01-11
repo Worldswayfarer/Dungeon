@@ -35,22 +35,11 @@ func handle_movement():
 	if Input.is_action_just_pressed("Shoot"):
 		shoot()
 	
-	_parent._direction = direction.normalized()
+	_parent.get_node("MovementComponent")._direction = direction.normalized()
 
 
 func shoot():
-		var new_enemy = _factory.get_object_instance(Enums.ObjectTypes.BULLET)
-		_factory.add_child(new_enemy)
-		
-		var effect = []
-		effect += [DamageOverTimeEffect.new(
-				DamageEffect.new(_parent._stats.get_stat(Enums.Stats.DAMAGE))
-			, Enums.Effects.Bleed, 10)]
-		effect += [TemporaryEffect.new(
-				StatModifierEffect.new(Enums.Stats.SPEED, 0, 0.25)
-			, Enums.Effects.Slow, 5)]
-		
-		new_enemy.setup(global_position, effect)
+	_parent.get_node("AttackComponent").attack(Enums.ObjectTypes.BULLET)
 
 
 func _on_timer_timeout():

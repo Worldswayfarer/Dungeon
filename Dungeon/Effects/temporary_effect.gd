@@ -1,13 +1,13 @@
 class_name TemporaryEffect
 
-var _effect : StatModifierEffect
+var _effect
 var _duration : float
 var _timer : float = 0.
 var _target : Entity
 var _name : Enums.Effects
 
 
-func _init(effect : StatModifierEffect, name : Enums.Effects, duration : float):
+func _init(effect, name : Enums.Effects, duration : float):
 	_effect = effect
 	_name = name
 	_duration = duration
