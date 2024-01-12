@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dubwal58kx7sa"]
+[gd_scene load_steps=11 format=3 uid="uid://dubwal58kx7sa"]
 
 [ext_resource type="Script" path="res://Entity/Entity.gd" id="1_6yw7x"]
 [ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Entity/Enemy/enemy.svg" id="2_g44qq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Entity/health_component.gd" id="4_n155c"]
 [ext_resource type="Script" path="res://Entity/attack_component.gd" id="5_6pfc5"]
 [ext_resource type="Script" path="res://Entity/movement_component.gd" id="6_x5vd8"]
+[ext_resource type="Script" path="res://Entity/Enemy/attack_area.gd" id="7_40s5m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x4b2"]
 animations = [{
@@ -20,6 +21,10 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fffg7"]
 radius = 32.1403
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpoxt"]
+radius = 35.0
+height = 70.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 5
@@ -43,3 +48,14 @@ script = ExtResource("5_6pfc5")
 
 [node name="MovementComponent" type="Node2D" parent="."]
 script = ExtResource("6_x5vd8")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_40s5m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CapsuleShape2D_dpoxt")
+
+[connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="AttackArea" method="_on_body_exited"]

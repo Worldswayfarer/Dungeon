@@ -1,13 +1,5 @@
 extends Node
 
-enum Stats
-{
-	CURRENT_HEALTH,
-	MAX_HEALTH,
-	SPEED,
-	DAMAGE,
-	ARMOR,
-}
 
 enum EntityTypes
 {
@@ -23,6 +15,6 @@ enum ObjectTypes
 
 enum Effects
 {
-	Bleed,
-	Slow,
+	BLEED,
+	SLOW,
 }
