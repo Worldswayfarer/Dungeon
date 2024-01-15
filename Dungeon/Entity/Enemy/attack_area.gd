@@ -20,7 +20,6 @@ func _process(delta):
 
 
 func deal_damage():
-	print("hit")
 	var damage = _parent.get_node("AttackComponent").get_damage()
 	_target.add_effects([DamageEffect.new(damage)])
 

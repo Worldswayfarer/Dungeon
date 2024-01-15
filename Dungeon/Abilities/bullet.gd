@@ -2,7 +2,7 @@ extends Area2D
 
 
 var _direction : Vector2
-var _speed = 100
+var _speed = 300
 var _flight_time = 2.
 var _effects : Array = []
 

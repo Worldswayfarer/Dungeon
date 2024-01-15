@@ -12,6 +12,8 @@ func _ready():
 
 
 func next_room():
+	var player_health = get_node("/root/main/Player/HealthComponent")
+	player_health._current_health = player_health._max_health
 	_room.cleanup()
 	_room.add_child(_fight_room.instantiate())
 
