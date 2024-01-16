@@ -13,6 +13,13 @@ enum ObjectTypes
 	BULLET,
 }
 
+
+enum Abilities
+{
+	BULLET,
+}
+
+
 enum Effects
 {
 	BLEED,
