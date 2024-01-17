@@ -34,15 +34,15 @@ func handle_movement():
 	_parent.get_node("MovementComponent")._direction = direction.normalized()
 
 
-func shoot():
-	_parent.get_node("AbilityComponent").cast_ability(Enums.Abilities.BULLET)
+func shoot(skill_slot):
+	_parent.get_node("AbilityComponent").use_slot(skill_slot)
 
 
 func _input(event):
 	if event.is_action_pressed("use_ability_1"):
-		shoot()
+		shoot(0)
 	if event.is_action_pressed("use_ability_2"):
-		shoot()
+		shoot(1)
 
 
 func _on_timer_timeout():
