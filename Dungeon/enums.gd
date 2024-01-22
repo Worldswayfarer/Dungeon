@@ -11,12 +11,14 @@ enum ObjectTypes
 {
 	BASE,
 	BULLET,
+	BOMB,
 }
 
 
 enum Abilities
 {
 	BULLET,
+	CAST_BOMB
 }
 
 
