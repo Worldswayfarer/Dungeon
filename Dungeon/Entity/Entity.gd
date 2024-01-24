@@ -26,3 +26,4 @@ func _process(delta):
 		if _active_effects[index].timer(delta):
 			_active_effects.pop_at(index)
 		index -= 1
+
