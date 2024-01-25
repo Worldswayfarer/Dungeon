@@ -5,6 +5,7 @@ var _attack_component = null
 var _factory = null
 
 
+
 # since this is not attached to a node, it can't call get_node()
 func setup(caster, factory):
 	_attack_component = caster.get_node("AttackComponent")
