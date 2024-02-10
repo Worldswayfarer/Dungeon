@@ -17,7 +17,7 @@ func _ready():
 
 
 func cast_ability(ability_name : Enums.Abilities):
-		abilities[ability_name].use_ability()
+	abilities[ability_name].use_ability()
 
 
 func use_slot(slot_number : int):
