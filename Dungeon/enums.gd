@@ -7,6 +7,7 @@ enum EntityTypes
 	ENEMY,
 }
 
+
 enum ObjectTypes
 {
 	BASE,
