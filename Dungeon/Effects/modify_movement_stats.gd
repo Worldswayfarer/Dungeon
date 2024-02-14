@@ -9,14 +9,14 @@ func _init(speed, speed_modifier):
 
 
 func apply_effect(target):
-	var component = target.get_node("HealthComponent")
+	var component = target.get_node("MovementComponent")
 	
 	component._speed += _speed
 	component._speed_modifier *= _speed_modifier
 
 
 func reverse_effect(target):
-	var component = target.get_node("HealthComponent")
+	var component = target.get_node("MovementComponent")
 	
 	component._speed -= _speed
 	component._speed_modifier /= _speed_modifier

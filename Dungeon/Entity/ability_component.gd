@@ -4,6 +4,11 @@ var abilities = {}
 var _parent
 var _object_factory
 
+
+var _damage : int = 1
+var _damage_modifier : float = 1
+
+
 var _ability_slots = []
 
 func _ready():
@@ -22,3 +27,7 @@ func cast_ability(ability_name : Enums.Abilities):
 
 func use_slot(slot_number : int):
 	cast_ability(_ability_slots[slot_number])
+
+
+func get_damage():
+	return _damage * _damage_modifier

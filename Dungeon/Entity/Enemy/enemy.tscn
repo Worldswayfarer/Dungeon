@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Entity/Enemy/enemy.svg" id="2_g44qq"]
 [ext_resource type="Script" path="res://Entity/Enemy/enemy.gd" id="3_rqlpr"]
 [ext_resource type="Script" path="res://Entity/health_component.gd" id="4_n155c"]
-[ext_resource type="Script" path="res://Entity/attack_component.gd" id="5_6pfc5"]
 [ext_resource type="Script" path="res://Entity/movement_component.gd" id="6_x5vd8"]
 [ext_resource type="Script" path="res://Entity/Enemy/attack_area.gd" id="7_40s5m"]
+[ext_resource type="Script" path="res://Entity/ability_component.gd" id="7_cp6iv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x4b2"]
 animations = [{
@@ -43,9 +43,6 @@ script = ExtResource("3_rqlpr")
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("4_n155c")
 
-[node name="AttackComponent" type="Node2D" parent="."]
-script = ExtResource("5_6pfc5")
-
 [node name="MovementComponent" type="Node2D" parent="."]
 script = ExtResource("6_x5vd8")
 
@@ -56,6 +53,9 @@ script = ExtResource("7_40s5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CapsuleShape2D_dpoxt")
+
+[node name="AbilityComponent" type="Node2D" parent="."]
+script = ExtResource("7_cp6iv")
 
 [connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="AttackArea" method="_on_body_exited"]

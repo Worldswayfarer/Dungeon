@@ -8,6 +8,12 @@ enum EntityTypes
 }
 
 
+enum Stats
+{
+	DAMAGE,
+}
+
+
 enum ObjectTypes
 {
 	BASE,
