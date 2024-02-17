@@ -16,9 +16,9 @@ func _ready():
 	_object_factory =  get_node("/root/main/ObjectFactory")
 	var bullet = CastBullet.new()
 	bullet.setup(_parent,_object_factory)
-	abilities[Enums.Abilities.BULLET] = bullet
-	_ability_slots += [Enums.Abilities.BULLET]
-	_ability_slots += [Enums.Abilities.BULLET]
+	abilities[Enums.Abilities.CAST_BULLET] = bullet
+	_ability_slots += [Enums.Abilities.CAST_BULLET]
+	_ability_slots += [Enums.Abilities.CAST_BULLET]
 
 
 func cast_ability(ability_name : Enums.Abilities):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://viabfeu5qm28"]
+[gd_scene load_steps=10 format=3 uid="uid://viabfeu5qm28"]
 
 [ext_resource type="Script" path="res://Core/main.gd" id="1_f88rg"]
 [ext_resource type="PackedScene" uid="uid://c5pu500chidna" path="res://Map/map.tscn" id="1_sjd4x"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Core/object_factory.gd" id="4_h2x6r"]
 [ext_resource type="Script" path="res://Menu/FPS_Counter.gd" id="5_jcqve"]
 [ext_resource type="Script" path="res://Menu/Menu.gd" id="6_mahpr"]
+[ext_resource type="Script" path="res://SkillTrees/Skill_tree_node.gd" id="7_61dua"]
 [ext_resource type="Texture2D" uid="uid://di5mh25hudy2i" path="res://Menu/PauseMenuBackground.png" id="7_totu5"]
 
 [node name="main" type="Node2D"]
@@ -30,6 +31,9 @@ offset_right = 40.0
 offset_bottom = 26.0
 text = "000"
 script = ExtResource("5_jcqve")
+
+[node name="SkillTree" type="Node2D" parent="."]
+script = ExtResource("7_61dua")
 
 [node name="Menu" type="CanvasLayer" parent="."]
 process_mode = 3

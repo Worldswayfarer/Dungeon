@@ -11,11 +11,12 @@ var _effects = []
 var _upgrades = []
 
 
-func Skill(name, current_level, maximum_level, effects = [], upgrades = []):
+func _init(name : Enums.Abilities, current_level : int, maximum_level : int, effects = [], upgrades = []):
 	_name = name
 	_current_level = current_level
 	_maximum_level = maximum_level
 	_effects = effects
+	_upgrades = upgrades
 
 
 func level_up():
@@ -24,4 +25,7 @@ func level_up():
 
 
 func get_effects():
-	return _effects[_current_level]
+	var combined_effects = _effects[_current_level]
+	for upgrade in _upgrades:
+		combined_effects.append(upgrade.get_effects())
+	return  combined_effects

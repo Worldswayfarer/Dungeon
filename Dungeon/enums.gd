@@ -24,7 +24,7 @@ enum ObjectTypes
 
 enum Abilities
 {
-	BULLET,
+	CAST_BULLET,
 	CAST_BOMB
 }
 
