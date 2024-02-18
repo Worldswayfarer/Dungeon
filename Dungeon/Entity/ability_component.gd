@@ -14,15 +14,17 @@ var _ability_slots = []
 func _ready():
 	_parent = get_parent()
 	_object_factory =  get_node("/root/main/ObjectFactory")
-	var bullet = CastBullet.new()
-	bullet.setup(_parent,_object_factory)
-	abilities[Enums.Abilities.CAST_BULLET] = bullet
+	setup()
+
+
+func setup():
+	abilities[Enums.Abilities.CAST_BULLET] = get_node("/root/main/SkillTree").get_skill(Enums.Abilities.CAST_BULLET)
 	_ability_slots += [Enums.Abilities.CAST_BULLET]
 	_ability_slots += [Enums.Abilities.CAST_BULLET]
 
 
 func cast_ability(ability_name : Enums.Abilities):
-	abilities[ability_name].use_ability()
+	abilities[ability_name].use_ability(_parent, _object_factory)
 
 
 func use_slot(slot_number : int):

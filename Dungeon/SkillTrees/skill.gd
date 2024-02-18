@@ -24,8 +24,15 @@ func level_up():
 		_current_level += 1
 
 
-func get_effects():
+func get_effects(caster):
 	var combined_effects = _effects[_current_level]
 	for upgrade in _upgrades:
 		combined_effects.append(upgrade.get_effects())
-	return  combined_effects
+	
+	
+	var scaled_effects = []
+	for effect in combined_effects:
+		var new_effect = effect.duplicate()
+		new_effect.scale(caster)
+		scaled_effects.append(new_effect)
+	return  scaled_effects

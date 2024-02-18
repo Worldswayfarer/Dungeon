@@ -1,19 +1,27 @@
 extends Node2D
 
-var _skill_tree : SkillTree
+
+# holds the main skill of every "tree"
+# e.t. only holds the CAST_BULLET skill but not its upgrades
+var _skills = {}
 
 
-func _ready():
-	var effects = [DamageEffect.new(1)]
-	effects += [DamageEffect.new(2)]
-	effects += [DamageEffect.new(3)]
-	effects += [DamageEffect.new(4)]
-	var skills = Skill.new(Enums.Abilities.CAST_BULLET, 0, 3, effects)
-	var tree = {}
-	tree[Enums.Abilities.CAST_BULLET] = skills
-	_skill_tree = SkillTree.new(tree)
+func get_skill(skill : Enums.Abilities):
+	return _skills[skill]
 
 
-func _process(delta):
-	var skill = _skill_tree.get_skill_effects(Enums.Abilities.CAST_BULLET)
-	print(skill)
+func _enter_tree():
+	load_tree()
+
+
+func load_tree():
+	var level_1 = [DamageEffect.new(1)]
+	var level_2 = [DamageEffect.new(2)]
+	var level_3 = [DamageEffect.new(3)]
+	var level_4 = [DamageEffect.new(4)]
+	var effects = []
+	effects.append(level_1)
+	effects.append(level_2)
+	effects.append(level_3)
+	effects.append(level_4)
+	_skills[Enums.Abilities.CAST_BULLET] = CastBullet.new(Enums.Abilities.CAST_BULLET, 0, 3, effects)
