@@ -15,6 +15,9 @@ func apply_effect(target):
 	component._attack_modifier *= _attack_modifier
 
 
+func scale(_caster):
+	pass
+
 func reverse_effect(target):
 	var component = target.get_node("HealthComponent")
 	

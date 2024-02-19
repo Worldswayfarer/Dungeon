@@ -25,4 +25,6 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	body.add_effects(_effects)
+	for effect in _effects:
+		var new_effect = effect.duplicate()
+		new_effect.apply_effect(body)

@@ -20,3 +20,7 @@ func reverse_effect(target):
 	
 	component._speed -= _speed
 	component._speed_modifier /= _speed_modifier
+
+
+func scale(_caster):
+	pass

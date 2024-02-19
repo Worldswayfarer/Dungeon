@@ -38,3 +38,7 @@ func timer(delta):
 	if _timer >= _duration:
 		_effect.reverse_effect(_target)
 		return true
+
+
+func scale(_caster):
+	pass

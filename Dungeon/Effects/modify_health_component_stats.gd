@@ -33,3 +33,7 @@ func reverse_effect(target):
 	
 	component._armor -= _armor
 	component._armor_modifier /= _armor_modifier
+
+
+func scale(_caster):
+	pass

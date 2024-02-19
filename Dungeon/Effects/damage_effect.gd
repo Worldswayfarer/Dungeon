@@ -11,7 +11,7 @@ func duplicate():
 
 
 func scale(caster):
-	_damage *= caster.get_node("AbilityComponent")._damage
+	_damage *= caster.get_node("AbilityComponent").get_damage()
 
 
 func apply_effect(target):

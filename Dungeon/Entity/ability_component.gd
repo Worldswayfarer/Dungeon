@@ -5,7 +5,7 @@ var _parent
 var _object_factory
 
 
-var _damage : int = 1
+var _damage : int = 2
 var _damage_modifier : float = 1
 
 
@@ -24,7 +24,7 @@ func setup():
 
 
 func cast_ability(ability_name : Enums.Abilities):
-	abilities[ability_name].use_ability(_parent, _object_factory)
+	abilities[ability_name].use_skill(_parent)
 
 
 func use_slot(slot_number : int):

@@ -13,11 +13,12 @@ func _init(damage_effect : DamageEffect, name : Enums.Effects, duration : float)
 
 
 func duplicate():
-	return DamageOverTimeEffect.new(_damage_effect, _name, _duration)
+	return DamageOverTimeEffect.new(_damage_effect.duplicate(), _name, _duration)
 
 
 func refresh(duration):
 	_duration = duration
+
 
 func apply_effect(target : Entity):
 	
@@ -30,6 +31,10 @@ func apply_effect(target : Entity):
 	
 	_target = target
 	_target._active_effects += [self]
+
+
+func scale(caster):
+	_damage_effect.scale(caster)
 
 
 func timer(delta):

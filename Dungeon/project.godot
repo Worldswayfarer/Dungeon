@@ -19,6 +19,7 @@ config/icon="res://Entity/Player/icon.svg"
 
 Signals="*res://Signals.gd"
 Enums="*res://enums.gd"
+References="*res://references.gd"
 
 [display]
 
