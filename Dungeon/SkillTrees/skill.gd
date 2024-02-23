@@ -36,42 +36,48 @@ func level_up():
 
 
 func get_on_hit_effects():
+	if _on_hit_effects == [] or _on_hit_effects.size() <= _current_level:
+		return []
 	return _on_hit_effects[_current_level]
 
 
 func get_self_effects():
+	if _self_effects == [] or _self_effects.size() <= _current_level:
+		return []
 	return _self_effects[_current_level]
 
 
 func aggregate_on_hit_effects(caster):
 	var scaled_effects = []
-	for effect in _on_hit_effects[_current_level]:
+	for effect in get_on_hit_effects():
 		var new_effect = effect.duplicate()
 		new_effect.scale(caster)
 		scaled_effects.append(new_effect)
 	
 	for upgrade in _upgrades:
-		scaled_effects.append(upgrade.aggregate_on_hit_effects(caster))
+		scaled_effects.append_array(upgrade.aggregate_on_hit_effects(caster))
 	if _main_skill == null:
 		return scaled_effects
 	if _is_castable:
-		_main_skill._effects.append(scaled_effects)
+		_main_skill._effects.append_array(scaled_effects)
 
 
 func aggregate_self_effects(caster):
 	var scaled_effects = []
-	for effect in _self_effects[_current_level]:
+	for effect in get_self_effects():
 		var new_effect = effect.duplicate()
 		new_effect.scale(caster)
 		scaled_effects.append(new_effect)
 	
 	for upgrade in _upgrades:
-		scaled_effects.append(upgrade.aggregate_self_effects(caster))
+		scaled_effects.append_array(upgrade.aggregate_self_effects(caster))
 	
 	return scaled_effects
 
 
 func use_skill(caster):
-	_main_skill.apply_effect(aggregate_on_hit_effects(caster))
+	if _main_skill != null:
+		aggregate_on_hit_effects(caster)
+		_main_skill.apply_effect(caster)
 	caster.add_effects(aggregate_self_effects(caster))
 

@@ -25,4 +25,5 @@ func load_tree():
 	effects.append(level_2)
 	effects.append(level_3)
 	effects.append(level_4)
-	_skills[Enums.Abilities.CAST_BULLET] = Skill.new(Enums.Abilities.CAST_BULLET, 0, 3, true, main_effect, [], effects)
+	_skills[Enums.Abilities.CAST_BULLET] = Skill.new(Enums.Abilities.CAST_BULLET,
+		0, 3, true, main_effect, [], effects)
