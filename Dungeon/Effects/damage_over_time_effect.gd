@@ -16,8 +16,8 @@ func duplicate():
 	return DamageOverTimeEffect.new(_damage_effect.duplicate(), _name, _duration)
 
 
-func refresh(duration):
-	_duration = duration
+func scale(caster):
+	_damage_effect.scale(caster)
 
 
 func apply_effect(target : Entity):
@@ -33,8 +33,8 @@ func apply_effect(target : Entity):
 	_target._active_effects += [self]
 
 
-func scale(caster):
-	_damage_effect.scale(caster)
+func refresh(duration):
+	_duration = duration
 
 
 func timer(delta):

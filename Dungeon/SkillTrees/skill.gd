@@ -60,6 +60,7 @@ func aggregate_on_hit_effects(caster):
 		return scaled_effects
 	if _is_castable:
 		_main_skill._effects.append_array(scaled_effects)
+		return _main_skill
 
 
 func aggregate_self_effects(caster):
