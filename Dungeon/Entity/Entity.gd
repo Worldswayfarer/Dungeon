@@ -16,7 +16,7 @@ func setup(type : Enums.EntityTypes):
 func add_effects(effects):
 	for effect in effects:
 		var new = effect.duplicate()
-		new.apply_effect(self)
+		new.apply_effect(self, global_position)
 
 
 func _process(delta):

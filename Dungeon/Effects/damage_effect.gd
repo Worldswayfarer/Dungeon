@@ -14,5 +14,5 @@ func scale(caster):
 	_damage *= caster.get_node("AbilityComponent").get_damage()
 
 
-func apply_effect(target):
+func apply_effect(target, _position):
 	target.get_node("HealthComponent").apply_damage(_damage)

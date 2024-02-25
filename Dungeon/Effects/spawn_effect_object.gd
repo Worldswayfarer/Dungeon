@@ -5,23 +5,22 @@ var _object
 var _effects = []
 
 
-func _init(object : Enums.ObjectTypes):
+func _init(object : Enums.ObjectTypes, effects = []):
 	_object = object
+	_effects = effects
 
 
 func duplicate():
-	pass
+	return SpawnEffectObject.new(_object, _effects)
 
 
 func scale(_caster):
 	pass
 
 
-func apply_effect(target):
-	if target == null:
-		return
-	var factory = target.get_node(References._factory)
+func apply_effect(_target, position):
+	var factory = References._factory
 	var new_bullet = factory.get_object_instance(_object)
 	factory.add_child(new_bullet)
 	
-	new_bullet.setup(target.global_position, _effects)
+	new_bullet.setup(position, _effects)

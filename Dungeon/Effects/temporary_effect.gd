@@ -21,7 +21,7 @@ func refresh():
 	_timer = 0
 
 
-func apply_effect(target : Entity):
+func apply_effect(target : Entity, _position):
 	_target = target
 	for effect in _target._active_effects:
 		if effect is TemporaryEffect:

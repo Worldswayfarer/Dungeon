@@ -20,7 +20,7 @@ func scale(caster):
 	_damage_effect.scale(caster)
 
 
-func apply_effect(target : Entity):
+func apply_effect(target : Entity, _position):
 	
 	_target = target
 	for effect in _target._active_effects:

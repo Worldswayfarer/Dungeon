@@ -79,6 +79,6 @@ func aggregate_self_effects(caster):
 func use_skill(caster):
 	if _main_skill != null:
 		aggregate_on_hit_effects(caster)
-		_main_skill.apply_effect(caster)
+		_main_skill.apply_effect(caster, caster.global_position)
 	caster.add_effects(aggregate_self_effects(caster))
 

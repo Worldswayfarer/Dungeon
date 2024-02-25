@@ -8,7 +8,15 @@ func _init(speed, speed_modifier):
 	_speed_modifier = speed_modifier
 
 
-func apply_effect(target):
+func duplicate():
+	return ModifyMovementStatsEffect.new(_speed, _speed_modifier)
+
+
+func scale(_caster):
+	pass
+
+
+func apply_effect(target, _position):
 	var component = target.get_node("MovementComponent")
 	
 	component._speed += _speed
@@ -22,5 +30,3 @@ func reverse_effect(target):
 	component._speed_modifier /= _speed_modifier
 
 
-func scale(_caster):
-	pass
