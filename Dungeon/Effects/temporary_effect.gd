@@ -17,8 +17,8 @@ func duplicate():
 	return TemporaryEffect.new(_effect, _name, _duration)
 
 
-func refresh():
-	_timer = 0
+func scale(_caster):
+	pass
 
 
 func apply_effect(target : Entity, _position):
@@ -40,5 +40,7 @@ func timer(delta):
 		return true
 
 
-func scale(_caster):
-	pass
+func refresh():
+	_timer = 0
+
+
