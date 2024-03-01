@@ -2,7 +2,6 @@ extends Node2D
 
 var abilities = {}
 var _parent
-var _object_factory
 
 
 var _damage : int = 2
@@ -13,7 +12,6 @@ var _ability_slots = []
 
 func _ready():
 	_parent = get_parent()
-	_object_factory =  get_node("/root/main/ObjectFactory")
 	setup()
 
 

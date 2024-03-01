@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ombt7impe7vj"]
+
+[ext_resource type="Script" path="res://SkillTrees/Hitbox.gd" id="1_faeku"]
+[ext_resource type="Script" path="res://SkillTrees/Ability.gd" id="1_ib4oe"]
+[ext_resource type="Script" path="res://SkillTrees/Hit_Effects.gd" id="2_jimu6"]
+
+[node name="Ability" type="Node2D"]
+script = ExtResource("1_ib4oe")
+
+[node name="Hit_Box" type="Area2D" parent="."]
+script = ExtResource("1_faeku")
+
+[node name="Hit_Effects" type="Node" parent="."]
+script = ExtResource("2_jimu6")
