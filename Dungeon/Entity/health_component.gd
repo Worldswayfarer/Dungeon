@@ -10,6 +10,7 @@ var _health_modifier : float = 1
 var _armor : int = 1
 var _armor_modifier : float = 1
 
+
 func _ready():
 	_parent = get_parent()
 
