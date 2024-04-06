@@ -19,4 +19,4 @@ func next_room():
 
 
 func end_game():
-	get_tree().quit()
+	Signals.pause_game.emit()

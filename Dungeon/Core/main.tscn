@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://viabfeu5qm28"]
+[gd_scene load_steps=11 format=3 uid="uid://viabfeu5qm28"]
 
 [ext_resource type="Script" path="res://Core/main.gd" id="1_f88rg"]
 [ext_resource type="PackedScene" uid="uid://c5pu500chidna" path="res://Map/map.tscn" id="1_sjd4x"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Menu/Menu.gd" id="6_mahpr"]
 [ext_resource type="Script" path="res://SkillTrees/Skill_tree_node.gd" id="7_61dua"]
 [ext_resource type="Texture2D" uid="uid://di5mh25hudy2i" path="res://Menu/PauseMenuBackground.png" id="7_totu5"]
+[ext_resource type="Script" path="res://Menu/ExitButton.gd" id="10_v7r7x"]
 
 [node name="main" type="Node2D"]
 process_mode = 1
@@ -43,3 +44,13 @@ script = ExtResource("6_mahpr")
 [node name="PauseScreenBackground" type="Sprite2D" parent="Menu"]
 position = Vector2(960, 540)
 texture = ExtResource("7_totu5")
+
+[node name="ExitButton" type="Button" parent="Menu"]
+offset_left = 943.0
+offset_top = 528.0
+offset_right = 980.0
+offset_bottom = 559.0
+text = "Exit"
+script = ExtResource("10_v7r7x")
+
+[connection signal="button_down" from="Menu/ExitButton" to="Menu/ExitButton" method="end_game"]

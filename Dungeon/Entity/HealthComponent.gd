@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name HealthComponent
+
 var _parent = null
 
 var _current_health : int = 10

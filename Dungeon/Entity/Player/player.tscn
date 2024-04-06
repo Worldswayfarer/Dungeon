@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Entity/Entity.gd" id="1_7gjuw"]
 [ext_resource type="Texture2D" uid="uid://crne7hj6afcrh" path="res://Entity/Player/icon.svg" id="2_dxqhq"]
 [ext_resource type="Script" path="res://Entity/Player/player.gd" id="3_enlii"]
-[ext_resource type="Script" path="res://Entity/ability_component.gd" id="4_v2que"]
-[ext_resource type="Script" path="res://Entity/health_component.gd" id="5_3wbpb"]
-[ext_resource type="Script" path="res://Entity/movement_component.gd" id="6_b1va4"]
+[ext_resource type="Script" path="res://Entity/AbilityComponent.gd" id="4_v2que"]
+[ext_resource type="Script" path="res://Entity/HealthComponent.gd" id="5_3wbpb"]
+[ext_resource type="Script" path="res://Entity/MovementComponent.gd" id="6_b1va4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_674q1"]
 animations = [{

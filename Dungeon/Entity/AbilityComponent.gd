@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name AbilityComponent
+
 var abilities = {}
 var _parent
 

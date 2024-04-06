@@ -1,5 +1,6 @@
 extends Node2D
 
+class_name MovementComponent
 
 var _parent
 var _direction : Vector2 = Vector2.ZERO
