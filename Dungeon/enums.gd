@@ -11,6 +11,7 @@ enum EntityTypes
 enum Stats
 {
 	DAMAGE,
+	DAMAGEMULTIPLIER,
 }
 
 

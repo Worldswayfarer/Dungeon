@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqti8o26cx6fd"]
+[gd_scene load_steps=10 format=3 uid="uid://dqti8o26cx6fd"]
 
 [ext_resource type="Script" path="res://Entity/Entity.gd" id="1_7gjuw"]
 [ext_resource type="Texture2D" uid="uid://crne7hj6afcrh" path="res://Entity/Player/icon.svg" id="2_dxqhq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Entity/AbilityComponent.gd" id="4_v2que"]
 [ext_resource type="Script" path="res://Entity/HealthComponent.gd" id="5_3wbpb"]
 [ext_resource type="Script" path="res://Entity/MovementComponent.gd" id="6_b1va4"]
+[ext_resource type="Script" path="res://Entity/StatsComponent.gd" id="7_e18cm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_674q1"]
 animations = [{
@@ -47,5 +48,8 @@ script = ExtResource("5_3wbpb")
 
 [node name="MovementComponent" type="Node2D" parent="."]
 script = ExtResource("6_b1va4")
+
+[node name="StatsComponent" type="Node2D" parent="."]
+script = ExtResource("7_e18cm")
 
 [connection signal="timeout" from="Timer" to="Controls" method="_on_timer_timeout"]

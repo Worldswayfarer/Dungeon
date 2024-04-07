@@ -11,7 +11,8 @@ func duplicate():
 
 
 func scale(caster):
-	_damage *= caster.get_node("AbilityComponent").get_damage()
+	var stats = caster.get_node(References._stats_component)._stats
+	_damage *= stats[Enums.Stats.DAMAGE] * stats[Enums.Stats.DAMAGEMULTIPLIER]
 
 
 func apply_effect(target, _position):

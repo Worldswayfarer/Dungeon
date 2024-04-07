@@ -3,7 +3,7 @@ extends Area2D
 
 var _direction : Vector2
 var _speed = 300
-var _flight_time = 4.
+var _duration = 4.
 var _effects : Array = []
 
 
@@ -19,9 +19,9 @@ func setup(new_position, effects : Array = [], mask = 0b100):
 
 func _process(delta):
 	position += _direction * _speed * delta
-	if _flight_time <= 0:
+	if _duration <= 0:
 		self.queue_free()
-	_flight_time -= delta
+	_duration -= delta
 
 
 func _on_body_entered(body):
