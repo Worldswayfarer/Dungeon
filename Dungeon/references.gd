@@ -9,7 +9,7 @@ var _ability_component
 var _hitbox_component
 var _movement_component
 var _stats_component
-
+var _effect_component
 
 func _ready():
 	_health_component = "HealthComponent"
@@ -17,3 +17,4 @@ func _ready():
 	_hitbox_component = "HitBoxComponent"
 	_movement_component = "MovementComponent"
 	_stats_component = "StatsComponent"
+	_effect_component = "EffectComponent"

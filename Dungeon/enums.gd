@@ -20,6 +20,8 @@ enum ObjectTypes
 	BASE,
 	BULLET,
 	BOMB,
+	PLAYER,
+	ENEMY,
 }
 
 

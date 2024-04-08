@@ -21,7 +21,7 @@ func scale(_caster):
 	pass
 
 
-func apply_effect(target : Entity, _position):
+func apply_effect(target):
 	_target = target
 	for effect in _target._active_effects:
 		if effect is TemporaryEffect:

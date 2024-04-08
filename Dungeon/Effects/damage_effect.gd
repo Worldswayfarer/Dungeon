@@ -15,5 +15,5 @@ func scale(caster):
 	_damage *= stats[Enums.Stats.DAMAGE] * stats[Enums.Stats.DAMAGEMULTIPLIER]
 
 
-func apply_effect(target, _position):
-	target.get_node("HealthComponent").apply_damage(_damage)
+func apply_effect(target):
+	target.get_node(References._health_component).apply_damage(_damage)

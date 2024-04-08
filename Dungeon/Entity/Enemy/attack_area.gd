@@ -22,8 +22,9 @@ func _process(delta):
 func deal_damage():
 	if _target == null:
 		return
-	var damage = _parent.get_node("AbilityComponent").get_damage()
-	_target.add_effects([DamageEffect.new(damage)])
+	var stats = _parent.get_node(References._stats_component)._stats
+	var damage = stats[Enums.Stats.DAMAGE] * stats[Enums.Stats.DAMAGEMULTIPLIER]
+	_target.get_node(References._effect_component)._incoming_effects += [DamageEffect.new(damage)]
 
 
 func _on_body_entered(body):

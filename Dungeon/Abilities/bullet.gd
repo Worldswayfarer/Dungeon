@@ -1,11 +1,11 @@
-extends Area2D
+extends Node2D
 
 
 var _direction : Vector2
 var _speed = 300
 var _duration = 4.
 var _effects : Array = []
-
+var _hit_box : HitBoxComponent
 
 func setup(new_position, effects : Array = [], mask = 0b100):
 	position = new_position
@@ -14,7 +14,8 @@ func setup(new_position, effects : Array = [], mask = 0b100):
 	_direction = _direction.normalized()
 	
 	_effects = effects
-	collision_mask = mask
+	_hit_box = get_node(References._hitbox_component)
+	#_hit_box.collision_mask = mask
 
 
 func _process(delta):
@@ -24,7 +25,6 @@ func _process(delta):
 	_duration -= delta
 
 
-func _on_body_entered(body):
-	for effect in _effects:
-		var new_effect = effect.duplicate()
-		new_effect.apply_effect(body, global_position)
+func handle_hitbox(area):
+	print("yay")
+	area.add_effects(_effects)

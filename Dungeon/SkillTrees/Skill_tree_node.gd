@@ -15,12 +15,12 @@ func _enter_tree():
 
 
 func load_tree():
-	var level_1 = [DamageOverTimeEffect.new(DamageEffect.new(1), Enums.Effects.BLEED, 10)]
+	var level_1 = [DamageEffect.new(1)]
 	var level_2 = [DamageEffect.new(2)]
 	var level_3 = [DamageEffect.new(3)]
 	var level_4 = [DamageEffect.new(4)]
 	var effects = []
-	var main_effect = SpawnEffectObject.new(Enums.ObjectTypes.BULLET)
+	var main_effect = Ability.new()
 	effects.append(level_1)
 	effects.append(level_2)
 	effects.append(level_3)

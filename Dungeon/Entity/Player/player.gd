@@ -6,7 +6,6 @@ var _factory = null
 
 func _ready():
 	_parent = get_parent()
-	_parent._type = Enums.EntityTypes.PLAYER
 	_factory = get_node("/root/main/ObjectFactory")
 
 
