@@ -6,14 +6,14 @@ var _parent
 var _effects_component
 
 func _ready():
-	area_entered.connect(_on_area_entered)
+	self.area_entered.connect(_on_area_entered)
 	_parent = get_parent()
 	_effects_component = _parent.get_node_or_null(References._effect_component)
 
 
 func _on_area_entered(area):
-	print("hit")
 	_parent.handle_hitbox(area)
+
 
 func add_effects(effects):
 	if _effects_component:

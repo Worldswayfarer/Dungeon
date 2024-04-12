@@ -7,7 +7,7 @@ var _duration = 4.
 var _effects : Array = []
 var _hit_box : HitBoxComponent
 
-func setup(new_position, effects : Array = [], mask = 0b100):
+func setup(new_position, effects : Array = [], layer = 0b100):
 	position = new_position
 	_direction = get_viewport().get_mouse_position() - position
 	rotation = _direction.angle()
@@ -15,7 +15,7 @@ func setup(new_position, effects : Array = [], mask = 0b100):
 	
 	_effects = effects
 	_hit_box = get_node(References._hitbox_component)
-	#_hit_box.collision_mask = mask
+	_hit_box.collision_layer = layer
 
 
 func _process(delta):
@@ -26,5 +26,4 @@ func _process(delta):
 
 
 func handle_hitbox(area):
-	print("yay")
 	area.add_effects(_effects)
