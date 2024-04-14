@@ -1,5 +1,6 @@
 extends Node2D
 
+var _type = Enums.ObjectTypes.BULLET
 
 var _direction : Vector2
 var _speed = 300

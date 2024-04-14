@@ -1,13 +1,7 @@
-extends Node2D
+extends CharacterBody2D
 
-var _parent = null
-var _factory = null
-
-
-func _ready():
-	_parent = get_parent()
-	_factory = get_node("/root/main/ObjectFactory")
-
+@warning_ignore("unused_private_class_variable")
+var _type = Enums.ObjectTypes.PLAYER
 
 func _process(_delta):
 	handle_movement()
@@ -30,11 +24,11 @@ func handle_movement():
 		direction.x += 1
 	
 	
-	_parent.get_node("MovementComponent")._direction = direction.normalized()
+	get_node(References._movement_component)._direction = direction.normalized()
 
 
 func shoot(skill_slot):
-	_parent.get_node("AbilityComponent").use_slot(skill_slot)
+	get_node(References._ability_component).use_slot(skill_slot)
 
 
 func _input(event):
@@ -45,4 +39,4 @@ func _input(event):
 
 
 func _on_timer_timeout():
-	Signals.player_position_updated.emit(_parent.position)
+	Signals.player_position_updated.emit(position)
