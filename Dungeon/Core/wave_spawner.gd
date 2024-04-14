@@ -13,7 +13,7 @@ var _management
 
 func _ready():
 	_screen_size = get_viewport_rect().size
-	_factory = get_node("/root/main/ObjectFactory")
+	_factory = References._factory
 	randomize()
 	_time_next_wave = _timer_max
 	_management = get_parent()

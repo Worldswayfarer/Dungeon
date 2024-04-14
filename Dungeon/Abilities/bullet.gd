@@ -7,9 +7,9 @@ var _duration = 4.
 var _effects : Array = []
 var _hit_box : HitBoxComponent
 
-func setup(new_position, effects : Array = [], layer = 0b100):
+func setup(new_position, target_position, effects : Array = [], layer = 0b100):
 	position = new_position
-	_direction = get_viewport().get_mouse_position() - position
+	_direction = target_position - position
 	rotation = _direction.angle()
 	_direction = _direction.normalized()
 	
