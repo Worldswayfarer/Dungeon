@@ -3,6 +3,10 @@ extends CharacterBody2D
 @warning_ignore("unused_private_class_variable")
 var _type = Enums.ObjectTypes.PLAYER
 
+func handle_hitbox(area):
+	pass
+
+
 func _process(_delta):
 	handle_movement()
 

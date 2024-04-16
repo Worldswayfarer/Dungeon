@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://dubwal58kx7sa"]
+[gd_scene load_steps=13 format=3 uid="uid://dubwal58kx7sa"]
 
-[ext_resource type="Script" path="res://Entity/Enemy/Object.gd" id="1_65275"]
 [ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Entity/Enemy/enemy.svg" id="2_g44qq"]
 [ext_resource type="Script" path="res://Entity/Enemy/enemy.gd" id="3_rqlpr"]
 [ext_resource type="Script" path="res://Entity/HealthComponent.gd" id="4_n155c"]
@@ -32,16 +31,13 @@ height = 70.0
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 5
 collision_mask = 7
-script = ExtResource("1_65275")
+script = ExtResource("3_rqlpr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3x4b2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fffg7")
-
-[node name="Controls" type="Node2D" parent="."]
-script = ExtResource("3_rqlpr")
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("4_n155c")
