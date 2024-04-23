@@ -3,6 +3,7 @@ extends Node2D
 class_name EffectComponent
 
 var _parent
+
 var _incoming_effects = []
 var _active_effects = []
 
