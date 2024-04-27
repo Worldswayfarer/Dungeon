@@ -5,15 +5,13 @@ var _room
 
 
 func _ready():
-	_room = get_node("/root/main/Room")
+	_room = References._room
 	_room.add_child(_fight_room.instantiate())
 	Signals.access_next_room.connect(next_room)
 	Signals.player_death.connect(end_game)
 
 
 func next_room():
-	var player_health = get_node("/root/main/Player/HealthComponent")
-	player_health._current_health = player_health._max_health
 	_room.cleanup()
 	_room.add_child(_fight_room.instantiate())
 

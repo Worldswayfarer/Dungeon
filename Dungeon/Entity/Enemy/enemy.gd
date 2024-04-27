@@ -17,4 +17,4 @@ func handle_hitbox(area):
 
 func change_direction(player_position):
 	var direction = player_position - position
-	get_node(References._movement_component)._direction = direction.normalized()
+	get_node(References._movement_component_physics)._direction = direction.normalized()

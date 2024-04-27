@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bft6l3ivpm7yo"]
+[gd_scene load_steps=7 format=3 uid="uid://bft6l3ivpm7yo"]
 
 [ext_resource type="Texture2D" uid="uid://l36uk4eeiilk" path="res://Abilities/bullet.png" id="1_piphs"]
 [ext_resource type="Script" path="res://Abilities/bullet.gd" id="1_t5y3m"]
 [ext_resource type="Script" path="res://Entity/HitBoxComponent.gd" id="3_c5o0v"]
+[ext_resource type="Script" path="res://Entity/MovementComponent.gd" id="4_iy6oe"]
+[ext_resource type="Script" path="res://Entity/StatsComponent.gd" id="5_wdmgq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrfdv"]
 radius = 2.99999
@@ -23,3 +25,9 @@ script = ExtResource("3_c5o0v")
 position = Vector2(0, -3)
 rotation = -1.57294
 shape = SubResource("CapsuleShape2D_yrfdv")
+
+[node name="MovementComponent" type="Node2D" parent="."]
+script = ExtResource("4_iy6oe")
+
+[node name="StatsComponent" type="Node2D" parent="."]
+script = ExtResource("5_wdmgq")

@@ -28,7 +28,7 @@ func handle_movement():
 		direction.x += 1
 	
 	
-	get_node(References._movement_component)._direction = direction.normalized()
+	get_node(References._movement_component_physics)._direction = direction.normalized()
 
 
 func shoot(skill_slot):

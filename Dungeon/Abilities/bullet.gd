@@ -1,26 +1,27 @@
 extends Node2D
 
+@warning_ignore("unused_private_class_variable")
 var _type = Enums.ObjectTypes.BULLET
 
 var _direction : Vector2
-var _speed = 300
 var _duration = 4.
 var _effects : Array = []
 var _hit_box : HitBoxComponent
 
+
 func setup(new_position, target_position, effects : Array = [], layer = 0b100):
+	_effects = effects
+	_hit_box = get_node(References._hitbox_component)
+	
+	_hit_box.collision_layer = layer
 	position = new_position
 	_direction = target_position - position
 	rotation = _direction.angle()
-	_direction = _direction.normalized()
-	
-	_effects = effects
-	_hit_box = get_node(References._hitbox_component)
-	_hit_box.collision_layer = layer
+	var movement_Component : MovementComponent = get_node(References._movement_component)
+	movement_Component._direction = _direction.normalized()
 
 
 func _process(delta):
-	position += _direction * _speed * delta
 	if _duration <= 0:
 		self.queue_free()
 	_duration -= delta

@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name MovementComponent
+class_name MovementComponentPhysics
 
 var _parent
 var _direction : Vector2 = Vector2.ZERO
@@ -15,4 +15,4 @@ func _ready():
 func _physics_process(delta):
 	if _stats_component:
 		var speed = _stats_component.get_stat(Enums.Stats.SPEED)
-		_parent.position += _direction * speed * delta
+		_parent.move_and_collide(_direction * speed * delta)
