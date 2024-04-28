@@ -1,7 +1,5 @@
 extends Node2D
 
-@warning_ignore("unused_private_class_variable")
-var _type = Enums.ObjectTypes.BULLET
 
 var _direction : Vector2
 var _duration = 4.
@@ -27,5 +25,5 @@ func _process(delta):
 	_duration -= delta
 
 
-func handle_hitbox(area):
+func handle_hitbox_entered(area):
 	area.add_effects(_effects)

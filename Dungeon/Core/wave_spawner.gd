@@ -45,5 +45,4 @@ func spawnEnemies(type : Enums.ObjectTypes, count : int = 1):
 		new_position += cluster_position
 		
 		new_enemy.position = new_position
-		new_enemy._type = Enums.ObjectTypes.ENEMY
 		add_child(new_enemy)

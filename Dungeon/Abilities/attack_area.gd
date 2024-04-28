@@ -5,7 +5,6 @@ var _damage_timer : float = 0
 var _max_timer :float = 0.5
 var _attacking : bool = false
 var _effects : Array = [DamageEffect.new(10)]
-var _type = Enums.ObjectTypes.BULLET
 
 var _targets = []
 

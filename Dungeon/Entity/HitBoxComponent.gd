@@ -6,13 +6,21 @@ var _parent
 var _effects_component
 
 func _ready():
-	self.area_entered.connect(_on_area_entered)
 	_parent = get_parent()
+	if _parent.has_method("handle_hitbox_entered"):
+		self.area_entered.connect(_on_area_entered)
+	if _parent.has_method("handle_hitbox_exited"):
+		self.area_exited.connect(_on_area_exited)
+	
 	_effects_component = _parent.get_node_or_null(References._effect_component)
 
 
 func _on_area_entered(area):
-	_parent.handle_hitbox(area)
+	_parent.handle_hitbox_entered(area)
+
+
+func _on_area_exited(area):
+	_parent.handle_hitbox_exited(area)
 
 
 func add_effects(effects):

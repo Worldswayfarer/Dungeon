@@ -20,8 +20,5 @@ func apply_damage(damage):
 		var health_loss = damage / health_multiplier
 		
 		if combined_health - health_loss <= 0:
-			if _parent._type == Enums.EntityTypes.PLAYER:
-				Signals.player_death.emit()
-			else:
-				_parent.queue_free()
+			_parent.queue_free()
 		stats[Enums.Stats.CURRENT_HEALTH] -= health_loss
