@@ -11,6 +11,7 @@ func _exit_tree():
 
 func handle_hitbox_entered(area):
 	_target = area
+	_damage_timer = 0
 
 
 func handle_hitbox_exited(_area):
@@ -29,8 +30,6 @@ func _process(delta):
 		if _damage_timer <= 0:
 			_target.add_effects(_effects)
 			_damage_timer = _max_timer
-	else:
-		_damage_timer = _max_timer
 
 
 func change_direction(player_position):
