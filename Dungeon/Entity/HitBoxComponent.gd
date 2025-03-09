@@ -2,8 +2,8 @@ extends Area2D
 
 class_name HitBoxComponent
 
-var _parent
-var _effects_component
+@onready var _parent = get_parent()
+@onready var _Effects = _parent.get_node_or_null(References._effect_component)
 
 func _ready():
 	_parent = get_parent()
@@ -11,8 +11,6 @@ func _ready():
 		self.area_entered.connect(_on_area_entered)
 	if _parent.has_method("handle_hitbox_exited"):
 		self.area_exited.connect(_on_area_exited)
-	
-	_effects_component = _parent.get_node_or_null(References._effect_component)
 
 
 func _on_area_entered(area):
@@ -24,6 +22,6 @@ func _on_area_exited(area):
 
 
 func add_effects(effects):
-	if _effects_component:
-		_effects_component.add_effects(effects)
+	if _Effects:
+		_Effects.add_effects(effects)
 

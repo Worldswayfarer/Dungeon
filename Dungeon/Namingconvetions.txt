@@ -1,4 +1,5 @@
 classes/nodes: StateMachine
 functions/signals: apply_this
 class fields: _stat_value
+class field components: _Movement
 local var: stat_value

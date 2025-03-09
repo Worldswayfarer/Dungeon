@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 
+@onready var _Movement = get_node(References._movement_component_physics)
+@onready var _Abilities = get_node(References._ability_component)
+
 func _process(_delta):
 	handle_movement()
 
@@ -22,11 +25,11 @@ func handle_movement():
 		direction.x += 1
 	
 	
-	get_node(References._movement_component_physics)._direction = direction.normalized()
+	_Movement._direction = direction.normalized()
 
 
 func shoot(skill_slot):
-	get_node(References._ability_component).use_slot(skill_slot)
+	_Abilities.use_slot(skill_slot)
 
 
 func _input(event):

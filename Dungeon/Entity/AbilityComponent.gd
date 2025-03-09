@@ -2,13 +2,12 @@ extends Node2D
 
 class_name AbilityComponent
 
-var _parent
+@onready var _parent = get_parent()
 
 var abilities = {}
 var _ability_slots = []
 
 func _ready():
-	_parent = get_parent()
 	setup()
 
 

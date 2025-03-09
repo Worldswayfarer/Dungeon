@@ -2,18 +2,14 @@ extends Node2D
 
 class_name HealthComponent
 
-var _parent = null
-var _stats_component : StatsComponent
+@onready var _parent = get_parent()
+@onready var _Stats : StatsComponent = _parent.get_node_or_null(References._stats_component)
 
-
-func _ready():
-	_parent = get_parent()
-	_stats_component = _parent.get_node_or_null(References._stats_component)
 
 
 func apply_damage(damage):
-	if _stats_component:
-		var stats = _stats_component._stats
+	if _Stats:
+		var stats = _Stats._stats
 		var current_health = stats[Enums.Stats.CURRENT_HEALTH]
 		var health_multiplier = stats[Enums.Stats.HEALTH_MULTIPLIER]
 		var combined_health = current_health * health_multiplier

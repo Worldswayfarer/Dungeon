@@ -2,17 +2,13 @@ extends Node2D
 
 class_name MovementComponent
 
-var _parent
+@onready var _parent = get_parent()
 var _direction : Vector2 = Vector2.ZERO
 
-var _stats_component : StatsComponent
-
-func _ready():
-	_parent = get_parent()
-	_stats_component = _parent.get_node_or_null(References._stats_component)
+@onready var _Stats = _parent.get_node_or_null(References._stats_component)
 
 
 func _physics_process(delta):
-	if _stats_component:
-		var speed = _stats_component.get_stat(Enums.Stats.SPEED)
+	if _Stats:
+		var speed = _Stats.get_stat(Enums.Stats.SPEED)
 		_parent.position += _direction * speed * delta
