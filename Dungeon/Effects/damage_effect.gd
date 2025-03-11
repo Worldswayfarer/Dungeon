@@ -1,12 +1,14 @@
 class_name DamageEffect
 
+extends Effect
+
 var _damage
 
 func _init(damage):
 	_damage = damage
 
 
-func duplicate():
+func clone():
 	return DamageEffect.new(_damage)
 
 

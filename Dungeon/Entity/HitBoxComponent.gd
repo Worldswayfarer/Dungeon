@@ -23,5 +23,6 @@ func _on_area_exited(area):
 
 func add_effects(effects):
 	if _Effects:
-		_Effects.add_effects(effects)
+		for effect in effects:
+			effect.apply_effect(_parent)
 

@@ -1,9 +1,11 @@
 class_name DamageOverTimeEffect
 
+extends Effect
+
 var _damage_effect
 var _duration
 var _timer = 0.
-var _target
+var _target : EffectComponent
 var _name : Enums.Effects
 
 func _init(damage_effect : DamageEffect, name : Enums.Effects, duration : float):
@@ -12,8 +14,8 @@ func _init(damage_effect : DamageEffect, name : Enums.Effects, duration : float)
 	_name = name
 
 
-func duplicate():
-	return DamageOverTimeEffect.new(_damage_effect.duplicate(), _name, _duration)
+func clone():
+	return DamageOverTimeEffect.new(_damage_effect.clone(), _name, _duration)
 
 
 func scale(caster):
@@ -22,15 +24,14 @@ func scale(caster):
 
 func apply_effect(target):
 	
-	_target = target
+	_target = target.get_node(References._effect_component)
 	for effect in _target._active_effects:
 		if effect is DamageOverTimeEffect:
 			if effect._name == _name:
 				effect.refresh(_duration)
 				return
 	
-	_target = target
-	_target._active_effects += [self]
+	_target._active_effects += [self.clone()]
 
 
 func refresh(duration):
@@ -46,4 +47,4 @@ func timer(delta):
 		_timer = 0.
 		if !_target:
 			return
-		_target.add_effects([_damage_effect])
+		_damage_effect.apply_effect(_target)

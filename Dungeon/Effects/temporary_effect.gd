@@ -1,9 +1,11 @@
 class_name TemporaryEffect
 
+extends Effect
+
 var _effect
 var _duration : float
 var _timer : float = 0.
-var _target : Entity
+var _target : EffectComponent
 var _name : Enums.Effects
 
 
@@ -13,24 +15,25 @@ func _init(effect, name : Enums.Effects, duration : float):
 	_duration = duration
 
 
-func duplicate():
+func clone():
 	return TemporaryEffect.new(_effect, _name, _duration)
 
 
 func scale(_caster):
-	pass
+	_effect.scale(_caster)
 
 
 func apply_effect(target):
-	_target = target
+	_target = target.get_node(References._effect_component)
 	for effect in _target._active_effects:
 		if effect is TemporaryEffect:
 			if effect._name == _name:
 				effect.refresh()
 				return
 	
-	_target._active_effects += [self]
-	_effect.apply_effect(_target)
+	var clone_obj = clone()
+	_target._active_effects += [clone_obj]
+	clone_obj._effect.apply_effect(_target)
 
 
 func timer(delta):

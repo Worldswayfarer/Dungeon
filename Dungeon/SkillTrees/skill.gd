@@ -10,7 +10,7 @@ var _is_castable : bool
 var _main_skill = null
 
 
-# 2-dimensional array, every level is seperate
+# 2-dimensional array, every level is separate
 var _self_effects = []
 var _on_hit_effects = []
 
@@ -50,7 +50,7 @@ func get_self_effects():
 func aggregate_on_hit_effects(caster):
 	var scaled_effects = []
 	for effect in get_on_hit_effects():
-		var new_effect = effect.duplicate()
+		var new_effect = effect.clone()
 		new_effect.scale(caster)
 		scaled_effects.append(new_effect)
 	
@@ -66,7 +66,7 @@ func aggregate_on_hit_effects(caster):
 func aggregate_self_effects(caster):
 	var scaled_effects = []
 	for effect in get_self_effects():
-		var new_effect = effect.duplicate()
+		var new_effect = effect.clone()
 		new_effect.scale(caster)
 		scaled_effects.append(new_effect)
 	
@@ -80,6 +80,7 @@ func use_skill(caster):
 	if _main_skill != null:
 		aggregate_on_hit_effects(caster)
 		_main_skill.use(caster)
-	var effects = caster.get_node(References._effect_component)
-	effects._incoming_effects = aggregate_self_effects(caster)
+	var effects = aggregate_self_effects(caster)
+	for effect in effects:
+		effect.apply_effect(caster)
 
