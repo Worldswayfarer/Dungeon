@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://dubwal58kx7sa"]
 
 [ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Entity/Enemy/enemy.svg" id="2_g44qq"]
-[ext_resource type="Script" path="res://Entity/Enemy/enemy.gd" id="3_rqlpr"]
-[ext_resource type="Script" path="res://Entity/HealthComponent.gd" id="4_n155c"]
-[ext_resource type="Script" path="res://Entity/MovementComponentPhysics.gd" id="4_s3ny2"]
-[ext_resource type="Script" path="res://Entity/AbilityComponent.gd" id="7_cp6iv"]
-[ext_resource type="Script" path="res://Entity/EffectComponent.gd" id="7_ybtch"]
-[ext_resource type="Script" path="res://Entity/StatsComponent.gd" id="8_jd7op"]
-[ext_resource type="Script" path="res://Entity/HitBoxComponent.gd" id="10_70g7c"]
+[ext_resource type="Script" uid="uid://cm5ah1xiv8gla" path="res://Entity/Enemy/enemy.gd" id="3_rqlpr"]
+[ext_resource type="Script" uid="uid://g6aakshfqkv7" path="res://Entity/HealthComponent.gd" id="4_n155c"]
+[ext_resource type="Script" uid="uid://dfaary3cpoq4w" path="res://Entity/MovementComponentPhysics.gd" id="4_s3ny2"]
+[ext_resource type="Script" uid="uid://ds1vtkdirhs53" path="res://Entity/AbilityComponent.gd" id="7_cp6iv"]
+[ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="7_ybtch"]
+[ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="8_jd7op"]
+[ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="10_70g7c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x4b2"]
 animations = [{

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://5lu84eomwsmw"]
 
-[ext_resource type="Script" path="res://Menu/FPS_Counter.gd" id="1_qlj8p"]
+[ext_resource type="Script" uid="uid://tfqxcnmmcg83" path="res://Menu/FPS_Counter.gd" id="1_qlj8p"]
 
 [node name="HUD" type="CanvasLayer"]
 
