@@ -13,7 +13,7 @@ func _ready():
 		self.area_exited.connect(_on_area_exited)
 
 
-func _on_area_entered(area):
+func _on_area_entered(area: HitBoxComponent):
 	_parent.handle_hitbox_entered(area)
 
 

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var _damage_timer : float = 0
-var _max_timer :float = 0.5
+var _max_timer :float = 2
 var _effects : Array = [DamageEffect.new(10)]
 var _target = null
 @onready var _Movement = get_node(References._movement_component_physics)
