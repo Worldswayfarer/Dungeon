@@ -1,13 +1,13 @@
-extends Node2D
+extends BaseComponent
 
 class_name EffectComponent
 
-var _parent
 
 var _active_effects = []
 
-func _ready():
-	_parent = get_parent()
+
+func get_component_type() -> Enums.ComponentTypes:
+	return Enums.ComponentTypes.EFFECT
 
 func _process(delta):
 	# reversing through list in case some effect gets deleted

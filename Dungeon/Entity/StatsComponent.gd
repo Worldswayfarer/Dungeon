@@ -1,9 +1,11 @@
-extends Node2D
+extends BaseComponent
 
 class_name StatsComponent
 
 var _stats = {}
 
+func get_component_type() -> Enums.ComponentTypes:
+	return Enums.ComponentTypes.STATS
 
 func _init():
 	_stats[Enums.Stats.DAMAGE] = 10

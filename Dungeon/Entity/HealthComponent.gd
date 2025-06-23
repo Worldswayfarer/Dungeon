@@ -1,11 +1,14 @@
-extends Node2D
+extends BaseComponent
 
 class_name HealthComponent
 
-@onready var _parent = get_parent()
-@onready var _Stats : StatsComponent = _parent.get_node_or_null(References._stats_component)
+var _Stats : StatsComponent
 
+func get_component_type() -> Enums.ComponentTypes:
+	return Enums.ComponentTypes.HEALTH
 
+func _ready():
+	_Stats = get_component(Enums.ComponentTypes.STATS)
 
 func apply_damage(damage):
 	if _Stats:

@@ -1,12 +1,14 @@
-extends Area2D
+extends BaseComponent
 
 class_name HitBoxComponent
 
-@onready var _parent = get_parent()
-@onready var _Effects = _parent.get_node_or_null(References._effect_component)
+var _Effects : EffectComponent
+
+func get_component_type() -> Enums.ComponentTypes:
+	return Enums.ComponentTypes.HITBOX
 
 func _ready():
-	_parent = get_parent()
+	_Effects = get_component(Enums.ComponentTypes.EFFECT)
 	if _parent.has_method("handle_hitbox_entered"):
 		self.area_entered.connect(_on_area_entered)
 	if _parent.has_method("handle_hitbox_exited"):

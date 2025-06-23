@@ -1,11 +1,15 @@
-extends Node2D
+extends BaseComponent
 
 class_name MovementComponentPhysics
 
-@onready var _parent = get_parent()
 var _direction : Vector2 = Vector2.ZERO
-@onready var _Stats = _parent.get_node_or_null(References._stats_component)
+var _Stats : StatsComponent
 
+func get_component_type() -> Enums.ComponentTypes:
+	return Enums.ComponentTypes.MOVEMENT_PHYSICS
+
+func _ready():
+	_Stats = get_component(Enums.ComponentTypes.STATS)
 
 func _physics_process(delta):
 	if _Stats:

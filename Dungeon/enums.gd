@@ -1,5 +1,18 @@
 extends Node
 
+enum ComponentTypes
+{
+	ABILITY,
+	BASE,
+	EFFECT,
+	HEALTH,
+	HITBOX,
+	LOGIC,
+	MOVEMENT,
+	MOVEMENT_PHYSICS,
+	STATS,
+}
+
 
 enum EntityTypes
 {
@@ -33,7 +46,8 @@ enum ObjectTypes
 enum Abilities
 {
 	CAST_BULLET,
-	CAST_BOMB
+	CAST_BOMB,
+	SHURIKEN
 }
 
 
