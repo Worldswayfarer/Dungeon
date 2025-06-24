@@ -8,3 +8,14 @@ signal end_of_wave()
 signal access_next_room()
 signal entered_portal()
 signal pause_game()
+
+
+var signals = [
+	player_position_updated,
+	enemy_death,
+	player_death,
+	end_of_wave,
+	access_next_room,
+	entered_portal,
+	pause_game,
+	]

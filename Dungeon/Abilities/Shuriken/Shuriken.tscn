@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://gofugekfwwne"]
 
-[ext_resource type="Script" path="res://Abilities/Shuriken/shuriken.gd" id="1_k7nfk"]
+[ext_resource type="Script" uid="uid://bw8juetrs0dcx" path="res://Abilities/Shuriken/shuriken.gd" id="1_k7nfk"]
 [ext_resource type="Texture2D" uid="uid://c0dabnbcw3h4b" path="res://Abilities/Shuriken/shuriken.png" id="2_y68dx"]
-[ext_resource type="Script" path="res://Entity/HitBoxComponent.gd" id="3_dk2ql"]
-[ext_resource type="Script" path="res://Entity/MovementComponent.gd" id="4_j8mq5"]
-[ext_resource type="Script" path="res://Entity/StatsComponent.gd" id="5_s8idg"]
+[ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="3_dk2ql"]
+[ext_resource type="Script" uid="uid://blesg8vhq6mta" path="res://Entity/MovementComponent.gd" id="4_j8mq5"]
+[ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="5_s8idg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrfdv"]
 radius = 11.0

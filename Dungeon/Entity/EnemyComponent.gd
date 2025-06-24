@@ -1,12 +1,18 @@
-extends CharacterBody2D
+extends BaseComponent
+
+class_name EnemyComponent
 
 var _damage_timer : float = 0
 var _max_timer :float = 2
 var _effects : Array = [DamageEffect.new(10)]
-var _target = null
-@onready var _Movement = get_node(References._movement_component_physics)
+var _target : Root = null
+var _Movement : MovementComponentPhysics
+
+func get_component_type() -> Enums.ComponentTypes:
+	return Enums.ComponentTypes.LOGIC
 
 func _ready():
+	_Movement = get_component(Enums.ComponentTypes.MOVEMENT_PHYSICS)
 	Signals.player_position_updated.connect(change_direction)
 
 

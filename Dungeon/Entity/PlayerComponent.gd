@@ -1,11 +1,14 @@
 extends BaseComponent
 
 class_name PlayerComponent
-var _Movement
-var _Abilities
+var _Movement : MovementComponentPhysics
+var _Abilities : AbilityComponent
+
+func get_component_type() -> Enums.ComponentTypes:
+	return Enums.ComponentTypes.LOGIC
 
 func _ready():
-	_Movement = get_component(Enums.ComponentTypes.MOVEMENT)
+	_Movement = get_component(Enums.ComponentTypes.MOVEMENT_PHYSICS)
 	_Abilities = get_component(Enums.ComponentTypes.ABILITY)
 
 
