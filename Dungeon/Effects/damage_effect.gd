@@ -12,10 +12,10 @@ func clone():
 	return DamageEffect.new(_damage)
 
 
-func scale(caster):
-	var stats = caster.get_node(References._stats_component)._stats
+func scale(caster : Root):
+	var stats = caster.get_component(Enums.ComponentTypes.STATS)._stats
 	_damage *= stats[Enums.Stats.DAMAGE] * stats[Enums.Stats.DAMAGE_MULTIPLIER]
 
 
 func apply_effect(target):
-	target.get_node(References._health_component).apply_damage(_damage)
+	target.get_component(Enums.ComponentTypes.HEALTH).apply_damage(_damage)

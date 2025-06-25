@@ -11,9 +11,11 @@ func get_component_type() -> Enums.ComponentTypes:
 func _ready():
 	_Effects = get_component(Enums.ComponentTypes.EFFECT)
 	_Logic = get_component(Enums.ComponentTypes.LOGIC)
-	if _parent.has_method("handle_hitbox_entered"):
+	if !_Logic:
+		return
+	if _Logic.has_method("handle_hitbox_entered"):
 		self.area_entered.connect(_on_area_entered)
-	if _parent.has_method("handle_hitbox_exited"):
+	if _Logic.has_method("handle_hitbox_exited"):
 		self.area_exited.connect(_on_area_exited)
 
 
@@ -29,4 +31,3 @@ func add_effects(effects):
 	if _Effects:
 		for effect in effects:
 			effect.apply_effect(_parent)
-

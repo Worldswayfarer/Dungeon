@@ -24,7 +24,7 @@ func scale(caster):
 
 func apply_effect(target):
 	
-	_target = target.get_node(References._effect_component)
+	_target = target.get_component(Enums.ComponentTypes.EFFECT)
 	for effect in _target._active_effects:
 		if effect is DamageOverTimeEffect:
 			if effect._name == _name:

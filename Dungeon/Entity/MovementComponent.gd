@@ -12,6 +12,10 @@ func get_component_type() -> Enums.ComponentTypes:
 func _ready():
 	_Stats = get_component(Enums.ComponentTypes.STATS)
 
+
+func change_direction(new_direction : Vector2):
+	_direction = new_direction
+
 func _physics_process(delta):
 	if _Stats:
 		var speed = _Stats.get_stat(Enums.Stats.SPEED)

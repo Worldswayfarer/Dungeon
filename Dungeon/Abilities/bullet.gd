@@ -15,14 +15,15 @@ func get_component_type() -> Enums.ComponentTypes:
 
 func setup(new_position, target_position, effects : Array = [], layer = 0b100):
 	_effects = effects
-	_hit_box = get_component(Enums.ComponentTypes.HITBOX)
-	_movement_component = get_component(Enums.ComponentTypes.MOVEMENT)
 
+	_hit_box = get_component(Enums.ComponentTypes.HITBOX)
 	_hit_box.collision_layer = layer
-	position = new_position
-	_direction = target_position - position
-	rotation = _direction.angle()
-	_movement_component._direction = _direction.normalized()
+
+	_movement_component = get_component(Enums.ComponentTypes.MOVEMENT)
+	_parent.position = new_position
+	_direction = target_position - _parent.position
+	_parent.rotation = _direction.angle()
+	_movement_component.change_direction(_direction.normalized())
 
 
 func _process(delta):

@@ -5,7 +5,7 @@ class_name EnemyComponent
 var _damage_timer : float = 0
 var _max_timer :float = 2
 var _effects : Array = [DamageEffect.new(10)]
-var _target : Root = null
+var _target : HitBoxComponent = null
 var _Movement : MovementComponentPhysics
 
 func get_component_type() -> Enums.ComponentTypes:
@@ -38,5 +38,5 @@ func _process(delta):
 
 
 func change_direction(player_position):
-	var direction = player_position - position
-	_Movement._direction = direction.normalized()
+	var direction = player_position - _parent.position
+	_Movement.change_direction(direction.normalized())

@@ -48,4 +48,4 @@ func _input(event):
 
 
 func _on_timer_timeout():
-	Signals.player_position_updated.emit(position)
+	Signals.player_position_updated.emit(_parent.position)

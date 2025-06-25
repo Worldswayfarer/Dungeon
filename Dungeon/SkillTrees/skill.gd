@@ -83,4 +83,3 @@ func use_skill(caster):
 	var effects = aggregate_self_effects(caster)
 	for effect in effects:
 		effect.apply_effect(caster)
-
