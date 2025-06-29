@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://db7167f4ewrqd"]
+
+[ext_resource type="Script" uid="uid://bujq2kg01bb4w" path="res://Entity/Utils/Stats.gd" id="1_w6otm"]
+
+[resource]
+script = ExtResource("1_w6otm")
+damage = 10
+damage_multiplier = 1
+speed = 500
+current_health = 10
+maximum_health = 10
+health_multiplier = 1
+metadata/_custom_type_script = "uid://bujq2kg01bb4w"

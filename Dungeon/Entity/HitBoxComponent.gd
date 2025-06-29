@@ -20,6 +20,8 @@ func _ready():
 
 
 func _on_area_entered(area: HitBoxComponent):
+	if !area or !_Logic:
+		return
 	_Logic.handle_hitbox_entered(area)
 
 

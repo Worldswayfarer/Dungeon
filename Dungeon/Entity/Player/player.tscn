@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqti8o26cx6fd"]
+[gd_scene load_steps=13 format=3 uid="uid://dqti8o26cx6fd"]
 
 [ext_resource type="Script" uid="uid://whlqlepev8uy" path="res://Entity/Root.gd" id="1_k7rle"]
 [ext_resource type="Texture2D" uid="uid://crne7hj6afcrh" path="res://Entity/Player/icon.svg" id="2_dxqhq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dfaary3cpoq4w" path="res://Entity/MovementComponentPhysics.gd" id="5_ndvdi"]
 [ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="7_e18cm"]
 [ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="7_evogn"]
+[ext_resource type="Resource" uid="uid://bacf6prftjkx7" path="res://Resources/Stats/player.tres" id="7_ve7px"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="9_1eqak"]
 [ext_resource type="Script" uid="uid://f1da4suckwp" path="res://Entity/PlayerComponent.gd" id="9_ve7px"]
 
@@ -47,6 +48,7 @@ script = ExtResource("5_ndvdi")
 
 [node name="StatsComponent" type="Node2D" parent="."]
 script = ExtResource("7_e18cm")
+_base_stats = ExtResource("7_ve7px")
 
 [node name="EffectComponent" type="Node2D" parent="."]
 script = ExtResource("7_evogn")

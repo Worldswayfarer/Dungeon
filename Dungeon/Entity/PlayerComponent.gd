@@ -10,6 +10,7 @@ func get_component_type() -> Enums.ComponentTypes:
 func _ready():
 	_Movement = get_component(Enums.ComponentTypes.MOVEMENT_PHYSICS)
 	_Abilities = get_component(Enums.ComponentTypes.ABILITY)
+	_parent.position = Vector2(1000, 500)
 
 
 func _process(_delta):

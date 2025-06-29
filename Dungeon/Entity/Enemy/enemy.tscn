@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dubwal58kx7sa"]
+[gd_scene load_steps=13 format=3 uid="uid://dubwal58kx7sa"]
 
 [ext_resource type="Script" uid="uid://whlqlepev8uy" path="res://Entity/Root.gd" id="1_r3ots"]
 [ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Entity/Enemy/enemy.svg" id="2_g44qq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ds1vtkdirhs53" path="res://Entity/AbilityComponent.gd" id="7_cp6iv"]
 [ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="7_ybtch"]
 [ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="8_jd7op"]
+[ext_resource type="Resource" uid="uid://bvt7lmgr33ntm" path="res://Resources/Stats/base_enemy.tres" id="8_kll1m"]
 [ext_resource type="Script" uid="uid://b80r36wno3sp0" path="res://Entity/EnemyComponent.gd" id="9_kll1m"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="10_70g7c"]
 
@@ -49,6 +50,7 @@ script = ExtResource("7_ybtch")
 
 [node name="StatsComponent" type="Node2D" parent="."]
 script = ExtResource("8_jd7op")
+_base_stats = ExtResource("8_kll1m")
 
 [node name="HitBoxComponent" type="Area2D" parent="."]
 collision_layer = 4

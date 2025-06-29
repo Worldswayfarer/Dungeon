@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://viabfeu5qm28"]
+[gd_scene load_steps=12 format=3 uid="uid://viabfeu5qm28"]
 
 [ext_resource type="Script" uid="uid://ch2r8vfhoullw" path="res://Core/main.gd" id="1_f88rg"]
 [ext_resource type="PackedScene" uid="uid://c5pu500chidna" path="res://Map/map.tscn" id="1_sjd4x"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cmcy2w1rbeqpn" path="res://SkillTrees/Skill_tree_node.gd" id="7_61dua"]
 [ext_resource type="Texture2D" uid="uid://di5mh25hudy2i" path="res://Menu/PauseMenuBackground.png" id="7_totu5"]
 [ext_resource type="Script" uid="uid://bx2i15pbka82w" path="res://Menu/ExitButton.gd" id="10_v7r7x"]
+[ext_resource type="Script" uid="uid://bd3gsbuhxejfw" path="res://Menu/RestartButton.gd" id="11_ua6uo"]
 
 [node name="main" type="Node2D"]
 process_mode = 1
@@ -45,6 +46,14 @@ script = ExtResource("6_mahpr")
 position = Vector2(960, 540)
 texture = ExtResource("7_totu5")
 
+[node name="RestartButton" type="Button" parent="Menu"]
+offset_left = 929.0
+offset_top = 484.0
+offset_right = 994.0
+offset_bottom = 515.0
+text = "Restart"
+script = ExtResource("11_ua6uo")
+
 [node name="ExitButton" type="Button" parent="Menu"]
 offset_left = 943.0
 offset_top = 528.0
@@ -53,4 +62,5 @@ offset_bottom = 559.0
 text = "Exit"
 script = ExtResource("10_v7r7x")
 
+[connection signal="pressed" from="Menu/RestartButton" to="Menu/RestartButton" method="_on_pressed"]
 [connection signal="button_down" from="Menu/ExitButton" to="Menu/ExitButton" method="end_game"]

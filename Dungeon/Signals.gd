@@ -8,6 +8,7 @@ signal end_of_wave()
 signal access_next_room()
 signal entered_portal()
 signal pause_game()
+signal restart_game()
 
 
 var signals = [
@@ -18,4 +19,5 @@ var signals = [
 	access_next_room,
 	entered_portal,
 	pause_game,
+	restart_game
 	]
