@@ -2,12 +2,15 @@ extends Node2D
 
 var _fight_room = preload("res://Core/fight_room.tscn")
 var _room
-var _factory
+var _factory : ObjectFactory
 
 func _ready():
 	_room = References._room
 	_factory = References._factory
 	_room.add_child(_fight_room.instantiate())
+
+	self.add_child(_factory.get_object_instance(Enums.ObjectTypes.PLAYER))
+
 	Signals.access_next_room.connect(next_room)
 	Signals.player_death.connect(end_game)
 	Signals.restart_game.connect(restart_game)
