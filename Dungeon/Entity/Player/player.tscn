@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="7_e18cm"]
 [ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="7_evogn"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="9_1eqak"]
-[ext_resource type="Script" uid="uid://f1da4suckwp" path="res://Entity/PlayerComponent.gd" id="9_ve7px"]
+[ext_resource type="Script" uid="uid://cvrx1ury3gm6b" path="res://Entity/Logics/PlayerComponent.gd" id="9_k7rle"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_674q1"]
 animations = [{
@@ -63,7 +63,7 @@ shape = SubResource("CircleShape2D_b6s8d")
 shape = SubResource("CircleShape2D_b6s8d")
 
 [node name="PlayerComponent" type="Node2D" parent="."]
-script = ExtResource("9_ve7px")
-metadata/_custom_type_script = "uid://f1da4suckwp"
+script = ExtResource("9_k7rle")
+metadata/_custom_type_script = "uid://cvrx1ury3gm6b"
 
 [connection signal="timeout" from="Timer" to="PlayerComponent" method="_on_timer_timeout"]

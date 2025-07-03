@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://ds1vtkdirhs53" path="res://Entity/AbilityComponent.gd" id="7_cp6iv"]
 [ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="7_ybtch"]
 [ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="8_jd7op"]
-[ext_resource type="Script" uid="uid://b80r36wno3sp0" path="res://Entity/EnemyComponent.gd" id="9_kll1m"]
+[ext_resource type="Script" uid="uid://ct6utw586yg55" path="res://Entity/Logics/EnemyComponent.gd" id="9_r3ots"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="10_70g7c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x4b2"]
@@ -59,5 +59,5 @@ script = ExtResource("10_70g7c")
 shape = SubResource("CircleShape2D_fffg7")
 
 [node name="EnemyComponent" type="Node2D" parent="."]
-script = ExtResource("9_kll1m")
-metadata/_custom_type_script = "uid://b80r36wno3sp0"
+script = ExtResource("9_r3ots")
+metadata/_custom_type_script = "uid://ct6utw586yg55"

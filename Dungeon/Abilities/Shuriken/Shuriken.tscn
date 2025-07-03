@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://gofugekfwwne"]
 
-[ext_resource type="Script" uid="uid://bw8juetrs0dcx" path="res://Abilities/Shuriken/shuriken.gd" id="1_k7nfk"]
+[ext_resource type="Script" uid="uid://whlqlepev8uy" path="res://Entity/Root.gd" id="1_4u4iw"]
 [ext_resource type="Texture2D" uid="uid://c0dabnbcw3h4b" path="res://Abilities/Shuriken/shuriken.png" id="2_y68dx"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="3_dk2ql"]
 [ext_resource type="Script" uid="uid://blesg8vhq6mta" path="res://Entity/MovementComponent.gd" id="4_j8mq5"]
@@ -11,7 +11,7 @@ radius = 11.0
 height = 22.0
 
 [node name="Shuriken" type="Node2D"]
-script = ExtResource("1_k7nfk")
+script = ExtResource("1_4u4iw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_y68dx")
