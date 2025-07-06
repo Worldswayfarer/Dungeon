@@ -3,12 +3,14 @@ extends BaseComponent
 class_name HealthComponent
 
 var _Stats : StatsComponent
+var _Logic
 
 func get_component_type() -> Enums.ComponentTypes:
 	return Enums.ComponentTypes.HEALTH
 
 func _ready():
 	_Stats = get_component(Enums.ComponentTypes.STATS)
+	_Logic = get_component(Enums.ComponentTypes.LOGIC)
 
 func apply_damage(damage):
 	if _Stats:
@@ -18,6 +20,11 @@ func apply_damage(damage):
 		var combined_health = current_health * health_multiplier
 		var health_loss = damage / health_multiplier
 		
+		# Player Death will be handled externally
+		if _parent._object_type == Enums.ObjectTypes.PLAYER:
+			Signals.player_death.emit()
+			return
+
 		if combined_health - health_loss <= 0:
 			_parent.queue_free()
 		stats[Enums.Stats.CURRENT_HEALTH] -= health_loss

@@ -9,7 +9,7 @@ func _ready():
 	_factory = References._factory
 	_room.add_child(_fight_room.instantiate())
 
-	self.add_child(_factory.get_object_instance(Enums.ObjectTypes.PLAYER))
+	_factory.add_child(_factory.get_object_instance(Enums.ObjectTypes.PLAYER))
 
 	Signals.access_next_room.connect(next_room)
 	Signals.player_death.connect(end_game)
