@@ -6,7 +6,7 @@ extends Node2D
 var _skills = {}
 
 
-func get_skill(skill : Enums.Abilities):
+func get_skill(skill : Enums.ObjectTypes):
 	return _skills[skill]
 
 
@@ -25,5 +25,7 @@ func load_tree():
 	effects.append(level_2)
 	effects.append(level_3)
 	effects.append(level_4)
-	_skills[Enums.Abilities.CAST_BULLET] = Skill.new(Enums.Abilities.CAST_BULLET,
+	_skills[Enums.ObjectTypes.BULLET] = Skill.new(Enums.ObjectTypes.BULLET,
+		0, 3, true, main_effect, [], effects)
+	_skills[Enums.ObjectTypes.SHURIKEN] = Skill.new(Enums.ObjectTypes.SHURIKEN,
 		0, 3, true, main_effect, [], effects)

@@ -16,12 +16,13 @@ func _ready():
 
 
 func setup():
-	abilities[Enums.Abilities.CAST_BULLET] = References._skill_tree.get_skill(Enums.Abilities.CAST_BULLET)
-	_ability_slots += [Enums.Abilities.CAST_BULLET]
-	_ability_slots += [Enums.Abilities.SHURIKEN]
+	abilities[Enums.ObjectTypes.BULLET] = References._skill_tree.get_skill(Enums.ObjectTypes.BULLET)
+	abilities[Enums.ObjectTypes.SHURIKEN] = References._skill_tree.get_skill(Enums.ObjectTypes.SHURIKEN)
+	_ability_slots += [Enums.ObjectTypes.BULLET]
+	_ability_slots += [Enums.ObjectTypes.SHURIKEN]
 
 
-func cast_ability(ability_name : Enums.Abilities):
+func cast_ability(ability_name : Enums.ObjectTypes):
 	abilities[ability_name].use_skill(_parent)
 
 

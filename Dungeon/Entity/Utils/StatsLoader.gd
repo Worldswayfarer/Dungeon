@@ -1,9 +1,10 @@
 class_name StatLoader
 
 static var _stat_resources : Dictionary = {
-	Enums.ObjectTypes.PLAYER : preload("res://Resources/Stats/player.tres"),
 	Enums.ObjectTypes.BULLET : preload("res://Resources/Stats/bullet.tres"),
 	Enums.ObjectTypes.ENEMY : preload("res://Resources/Stats/base_enemy.tres"),
+	Enums.ObjectTypes.PLAYER : preload("res://Resources/Stats/player.tres"),
+	Enums.ObjectTypes.SHURIKEN : preload("res://Resources/Stats/shuriken.tres"),
 }
 
 static var _default_stat = preload("res://Resources/Stats/default_stats.tres")

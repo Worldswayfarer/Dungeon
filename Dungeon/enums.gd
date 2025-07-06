@@ -38,17 +38,11 @@ enum ObjectTypes
 	BASE,
 	BULLET,
 	BOMB,
-	PLAYER,
 	ENEMY,
+	PLAYER,
+	SHURIKEN,
 }
 
-
-enum Abilities
-{
-	CAST_BULLET,
-	CAST_BOMB,
-	SHURIKEN
-}
 
 
 enum Effects

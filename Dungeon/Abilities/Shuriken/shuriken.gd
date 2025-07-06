@@ -4,7 +4,7 @@ class_name SHURIKEN
 
 
 var _direction : Vector2
-var _duration = 4.
+var _duration = 2.
 var _effects : Array = []
 var _hit_box : HitBoxComponent
 var _movement_component : MovementComponent
@@ -28,7 +28,7 @@ func setup(new_position, target_position, effects : Array = [], layer = 0b100):
 
 func _process(delta):
 	if _duration <= 0:
-		self.queue_free()
+		_movement_component.change_direction(-_direction.normalized())
 	_duration -= delta
 
 
