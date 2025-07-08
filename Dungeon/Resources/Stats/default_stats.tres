@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_3t7pv")
-damage = 10
+damage = 1
 damage_multiplier = 1
 speed = 100
 current_health = 10
