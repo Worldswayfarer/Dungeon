@@ -18,6 +18,7 @@ func _ready():
 
 func _exit_tree():
 	Signals.enemy_death.emit(self)
+	Signals.player_position_updated.disconnect(change_direction)
 
 
 func handle_hitbox_entered(area):
