@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dubwal58kx7sa"]
+[gd_scene load_steps=13 format=3 uid="uid://dubwal58kx7sa"]
 
 [ext_resource type="Script" uid="uid://whlqlepev8uy" path="res://Entity/Root.gd" id="1_r3ots"]
 [ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Entity/Enemy/enemy.svg" id="2_g44qq"]
@@ -22,7 +22,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fffg7"]
-radius = 32.1403
+radius = 29.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3ots"]
+size = Vector2(70, 70)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -56,7 +59,7 @@ collision_mask = 2
 script = ExtResource("10_70g7c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
-shape = SubResource("CircleShape2D_fffg7")
+shape = SubResource("RectangleShape2D_r3ots")
 
 [node name="EnemyComponent" type="Node2D" parent="."]
 script = ExtResource("9_r3ots")

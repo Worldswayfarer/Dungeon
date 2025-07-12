@@ -3,6 +3,7 @@ extends BaseComponent
 class_name PlayerComponent
 var _Movement : MovementComponentPhysics
 var _Abilities : AbilityComponent
+var _Stats : StatsComponent
 
 func get_component_type() -> Enums.ComponentTypes:
 	return Enums.ComponentTypes.LOGIC
@@ -10,11 +11,21 @@ func get_component_type() -> Enums.ComponentTypes:
 func _ready():
 	_Movement = get_component(Enums.ComponentTypes.MOVEMENT_PHYSICS)
 	_Abilities = get_component(Enums.ComponentTypes.ABILITY)
+	_Stats = get_component(Enums.ComponentTypes.STATS)
 	_parent.position = Vector2(1000, 500)
 
 
 func _process(_delta):
 	handle_movement()
+	emit_player_health()
+
+	
+
+func emit_player_health():
+	var current_health = _Stats.get_stat(Enums.Stats.CURRENT_HEALTH)
+	var max_health = _Stats.get_stat(Enums.Stats.MAXIMUM_HEALTH)
+	var multiplier = _Stats.get_stat(Enums.Stats.HEALTH_MULTIPLIER)
+	Signals.player_health.emit(current_health * multiplier, max_health * multiplier)
 
 
 func handle_movement():

@@ -2,8 +2,12 @@ extends Node
 
 
 signal player_position_updated(player_position)
-signal enemy_death(object)
 signal player_death()
+signal player_health(current_health : float, max_health : float)
+
+
+signal enemy_death(object)
+
 signal end_of_wave()
 signal access_next_room()
 signal entered_portal()
@@ -13,6 +17,7 @@ signal restart_game()
 
 var signals = [
 	player_position_updated,
+	player_health,
 	enemy_death,
 	player_death,
 	end_of_wave,

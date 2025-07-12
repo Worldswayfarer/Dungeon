@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c5pu500chidna" path="res://Map/map.tscn" id="1_sjd4x"]
 [ext_resource type="Script" uid="uid://dqtnwndb0u3nj" path="res://Core/Room.gd" id="3_jbclv"]
 [ext_resource type="Script" uid="uid://brqd728fvs4ij" path="res://Core/object_factory.gd" id="4_h2x6r"]
-[ext_resource type="Script" uid="uid://tfqxcnmmcg83" path="res://Menu/FPS_Counter.gd" id="5_jcqve"]
 [ext_resource type="Script" uid="uid://ds6r07r4uhl3w" path="res://Menu/Menu.gd" id="6_mahpr"]
 [ext_resource type="Script" uid="uid://cmcy2w1rbeqpn" path="res://SkillTrees/Skill_tree_node.gd" id="7_61dua"]
 [ext_resource type="Texture2D" uid="uid://di5mh25hudy2i" path="res://Menu/PauseMenuBackground.png" id="7_totu5"]
+[ext_resource type="PackedScene" uid="uid://5lu84eomwsmw" path="res://Menu/hud.tscn" id="10_qgwhw"]
 [ext_resource type="Script" uid="uid://bx2i15pbka82w" path="res://Menu/ExitButton.gd" id="10_v7r7x"]
 [ext_resource type="Script" uid="uid://bd3gsbuhxejfw" path="res://Menu/RestartButton.gd" id="11_ua6uo"]
 
@@ -23,12 +23,6 @@ script = ExtResource("3_jbclv")
 
 [node name="ObjectFactory" type="Node2D" parent="."]
 script = ExtResource("4_h2x6r")
-
-[node name="FPS_Counter" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 26.0
-text = "000"
-script = ExtResource("5_jcqve")
 
 [node name="SkillTree" type="Node2D" parent="."]
 script = ExtResource("7_61dua")
@@ -57,6 +51,8 @@ offset_right = 980.0
 offset_bottom = 559.0
 text = "Exit"
 script = ExtResource("10_v7r7x")
+
+[node name="HUD" parent="." instance=ExtResource("10_qgwhw")]
 
 [connection signal="pressed" from="Menu/RestartButton" to="Menu/RestartButton" method="_on_pressed"]
 [connection signal="button_down" from="Menu/ExitButton" to="Menu/ExitButton" method="end_game"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://5lu84eomwsmw"]
+[gd_scene load_steps=3 format=3 uid="uid://5lu84eomwsmw"]
 
 [ext_resource type="Script" uid="uid://tfqxcnmmcg83" path="res://Menu/FPS_Counter.gd" id="1_qlj8p"]
+[ext_resource type="Script" uid="uid://bhb6evy8rg1pt" path="res://Menu/player_health_bar.gd" id="2_pi81i"]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -9,3 +10,18 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "000"
 script = ExtResource("1_qlj8p")
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -215.0
+offset_top = -155.0
+offset_right = 215.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_pi81i")
+metadata/_custom_type_script = "uid://bhb6evy8rg1pt"
