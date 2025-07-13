@@ -1,11 +1,16 @@
 extends BaseComponent
 
-class_name EnemyComponent
+class_name RangedEnemy
 
 var _damage_timer : float = 0
-var _max_timer :float = 2.0
-var _effects : Array = [DamageEffect.new(5)]
-var _target : HitBoxComponent = null
+var _max_timer :float = 5.0
+
+var _shooting_distance : float = 400
+
+
+var _shooter : Ability = Ability.new()
+
+var _target : Vector2 = Vector2.ZERO
 var _Movement : MovementComponentPhysics
 
 func get_component_type() -> Enums.ComponentTypes:
@@ -17,16 +22,7 @@ func _ready():
 
 
 func _exit_tree():
-	Signals.enemy_death.emit(self)
 	Signals.player_position_updated.disconnect(change_direction)
-
-
-func handle_hitbox_entered(area):
-	_target = area
-
-
-func handle_hitbox_exited(_area):
-	_target = null
 
 
 func _process(delta):
@@ -34,10 +30,13 @@ func _process(delta):
 	if !_target:
 		return
 	if _damage_timer <= 0:
-		_target.add_effects(_effects)
+		_shooter.use(_parent, Enums.ObjectTypes.BULLET, _target, 0b100, 0b010)
 		_damage_timer = _max_timer
 
 
-func change_direction(player_position):
-	var direction = player_position - _parent.position
-	_Movement.change_direction(direction.normalized())
+func change_direction(player_position : Vector2):
+	_target = player_position
+	var direction = (player_position - _parent.position).normalized()
+	if (player_position - _parent.position).length() < _shooting_distance:
+		direction = -direction
+	_Movement.change_direction(direction)

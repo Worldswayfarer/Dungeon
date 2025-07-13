@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=3 uid="uid://byd4c2evb86di"]
+
+[ext_resource type="Script" uid="uid://whlqlepev8uy" path="res://Entity/Root.gd" id="1_hdahl"]
+[ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Entity/Enemy/enemy.svg" id="2_ycidk"]
+[ext_resource type="Script" uid="uid://g6aakshfqkv7" path="res://Entity/HealthComponent.gd" id="3_7ndb2"]
+[ext_resource type="Script" uid="uid://dfaary3cpoq4w" path="res://Entity/MovementComponentPhysics.gd" id="4_8fmgw"]
+[ext_resource type="Script" uid="uid://ds1vtkdirhs53" path="res://Entity/AbilityComponent.gd" id="5_1bn00"]
+[ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="6_ehpxr"]
+[ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="7_apqbi"]
+[ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="8_nqx83"]
+[ext_resource type="Script" uid="uid://xbhee3nfghhw" path="res://Entity/Logics/RangedEnemy.gd" id="9_hdahl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3x4b2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ycidk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fffg7"]
+radius = 29.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3ots"]
+size = Vector2(70, 70)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_hdahl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3x4b2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fffg7")
+
+[node name="HealthComponent" type="Node2D" parent="."]
+script = ExtResource("3_7ndb2")
+
+[node name="MovementComponentPhysics" type="Node2D" parent="."]
+script = ExtResource("4_8fmgw")
+
+[node name="AbilityComponent" type="Node2D" parent="."]
+script = ExtResource("5_1bn00")
+
+[node name="EffectComponent" type="Node2D" parent="."]
+script = ExtResource("6_ehpxr")
+
+[node name="StatsComponent" type="Node2D" parent="."]
+script = ExtResource("7_apqbi")
+
+[node name="HitBoxComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("8_nqx83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+shape = SubResource("RectangleShape2D_r3ots")
+
+[node name="RangedEnemy" type="Node2D" parent="."]
+script = ExtResource("9_hdahl")
+metadata/_custom_type_script = "uid://xbhee3nfghhw"

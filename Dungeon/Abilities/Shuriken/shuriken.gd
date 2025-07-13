@@ -16,11 +16,12 @@ func get_component_type() -> Enums.ComponentTypes:
 	return Enums.ComponentTypes.LOGIC
 
 
-func setup(new_position, target_position, effects : Array = [], layer = 0b100):
+func setup(new_position, target_position, effects : Array = [], layer = 0b010, mask = 0b100):
 	_effects = effects
 
 	_hit_box = get_component(Enums.ComponentTypes.HITBOX)
 	_hit_box.collision_layer = layer
+	_hit_box.collision_mask = mask
 
 	_Movement = get_component(Enums.ComponentTypes.MOVEMENT)
 	_parent.position = new_position

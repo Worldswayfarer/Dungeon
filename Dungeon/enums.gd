@@ -39,6 +39,7 @@ enum ObjectTypes
 	BULLET,
 	BOMB,
 	ENEMY,
+	RANGEDENEMY,
 	PLAYER,
 	SHURIKEN,
 }
