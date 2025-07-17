@@ -1,7 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dqti8o26cx6fd"]
 
 [ext_resource type="Script" uid="uid://whlqlepev8uy" path="res://Entity/Root.gd" id="1_k7rle"]
-[ext_resource type="Texture2D" uid="uid://crne7hj6afcrh" path="res://Entity/Player/icon.svg" id="2_dxqhq"]
 [ext_resource type="Script" uid="uid://ds1vtkdirhs53" path="res://Entity/AbilityComponent.gd" id="4_v2que"]
 [ext_resource type="Script" uid="uid://g6aakshfqkv7" path="res://Entity/HealthComponent.gd" id="5_3wbpb"]
 [ext_resource type="Script" uid="uid://dfaary3cpoq4w" path="res://Entity/MovementComponentPhysics.gd" id="5_ndvdi"]
@@ -9,28 +8,19 @@
 [ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="7_evogn"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="9_1eqak"]
 [ext_resource type="Script" uid="uid://cvrx1ury3gm6b" path="res://Entity/Logics/PlayerComponent.gd" id="9_k7rle"]
+[ext_resource type="Texture2D" uid="uid://rbjqlf4rnpdt" path="res://images/dude.png" id="9_ve7px"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_674q1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_dxqhq")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7skvd"]
+radius = 9.0
+height = 42.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b6s8d"]
-radius = 32.0156
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vhflw"]
+height = 40.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_k7rle")
-
-[node name="Playermodel" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_674q1")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -57,13 +47,16 @@ collision_mask = 0
 script = ExtResource("9_1eqak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
-shape = SubResource("CircleShape2D_b6s8d")
+shape = SubResource("CapsuleShape2D_7skvd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_b6s8d")
+shape = SubResource("CapsuleShape2D_vhflw")
 
 [node name="PlayerComponent" type="Node2D" parent="."]
 script = ExtResource("9_k7rle")
 metadata/_custom_type_script = "uid://cvrx1ury3gm6b"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("9_ve7px")
 
 [connection signal="timeout" from="Timer" to="PlayerComponent" method="_on_timer_timeout"]

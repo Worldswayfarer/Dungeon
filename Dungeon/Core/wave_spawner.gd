@@ -7,7 +7,7 @@ var _offset = 30
 @warning_ignore("integer_division")
 var _spawn_offset = _offset/2
 var _time_next_wave
-var _timer_max = 1
+var _timer_max = 3
 var _management
 
 
