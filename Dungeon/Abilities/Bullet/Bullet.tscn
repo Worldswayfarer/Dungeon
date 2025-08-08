@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bft6l3ivpm7yo"]
 
-[ext_resource type="Texture2D" uid="uid://l36uk4eeiilk" path="res://Abilities/bullet.png" id="1_piphs"]
-[ext_resource type="Script" uid="uid://cd6jmypqpnphj" path="res://Abilities/bullet.gd" id="1_t5y3m"]
+[ext_resource type="Texture2D" uid="uid://l36uk4eeiilk" path="res://Abilities/Bullet/bullet.png" id="1_piphs"]
+[ext_resource type="Script" uid="uid://cd6jmypqpnphj" path="res://Abilities/Bullet/bullet.gd" id="1_t5y3m"]
 [ext_resource type="Script" uid="uid://whlqlepev8uy" path="res://Entity/Root.gd" id="1_xptb7"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="3_c5o0v"]
 [ext_resource type="Script" uid="uid://blesg8vhq6mta" path="res://Entity/MovementComponent.gd" id="4_iy6oe"]

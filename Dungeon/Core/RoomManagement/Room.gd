@@ -2,7 +2,7 @@
 extends Node2D
 
 
-var _portal_scene = preload("res://Core/portal.tscn")
+var _portal_scene = References._portal
 var _center_position = Vector2(960, 540)
 
 func _ready():

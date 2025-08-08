@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l36uk4eeiilk"
-path="res://.godot/imported/bullet.png-1636ba9cc6e499f88d47732d08c14628.ctex"
+uid="uid://c40phxx4qhsp"
+path="res://.godot/imported/Portal.png-d83fb944ba1b27f3691ed5151dc4d6c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Abilities/bullet.png"
-dest_files=["res://.godot/imported/bullet.png-1636ba9cc6e499f88d47732d08c14628.ctex"]
+source_file="res://Core/RoomManagement/Portal.png"
+dest_files=["res://.godot/imported/Portal.png-d83fb944ba1b27f3691ed5151dc4d6c4.ctex"]
 
 [params]
 

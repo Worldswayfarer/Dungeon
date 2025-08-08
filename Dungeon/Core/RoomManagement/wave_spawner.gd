@@ -4,8 +4,8 @@ extends Node2D
 var _factory
 var _screen_size = Vector2.ZERO
 var _offset = 30
-@warning_ignore("integer_division")
-var _spawn_offset = _offset/2
+
+var _spawn_offset = _offset/2.0
 var _time_next_wave
 var _timer_max = 3
 var _management

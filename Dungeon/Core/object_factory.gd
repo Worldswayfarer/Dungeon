@@ -9,7 +9,7 @@ func _enter_tree():
 	
 	_object_scenes[Enums.ObjectTypes.ENEMY] = preload("res://Entity/Enemy/enemy.tscn")
 	_object_scenes[Enums.ObjectTypes.RANGEDENEMY] = preload("res://Entity/Enemy/ranged_enemy.tscn")
-	_object_scenes[Enums.ObjectTypes.BULLET] = preload("res://Abilities/Bullet.tscn")
+	_object_scenes[Enums.ObjectTypes.BULLET] = preload("res://Abilities/Bullet/Bullet.tscn")
 	_object_scenes[Enums.ObjectTypes.PLAYER] = preload("res://Entity/Player/player.tscn")
 	_object_scenes[Enums.ObjectTypes.SHURIKEN] = preload("res://Abilities/Shuriken/Shuriken.tscn")
 

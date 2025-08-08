@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ch2r8vfhoullw" path="res://Core/main.gd" id="1_f88rg"]
 [ext_resource type="PackedScene" uid="uid://c5pu500chidna" path="res://Map/map.tscn" id="1_sjd4x"]
-[ext_resource type="Script" uid="uid://dqtnwndb0u3nj" path="res://Core/Room.gd" id="3_jbclv"]
+[ext_resource type="Script" uid="uid://dqtnwndb0u3nj" path="res://Core/RoomManagement/Room.gd" id="3_jbclv"]
 [ext_resource type="Script" uid="uid://brqd728fvs4ij" path="res://Core/object_factory.gd" id="4_h2x6r"]
 [ext_resource type="Script" uid="uid://ds6r07r4uhl3w" path="res://Menu/Menu.gd" id="6_mahpr"]
 [ext_resource type="Script" uid="uid://cmcy2w1rbeqpn" path="res://SkillTrees/Skill_tree_node.gd" id="7_61dua"]
