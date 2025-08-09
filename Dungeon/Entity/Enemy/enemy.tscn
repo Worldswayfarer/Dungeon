@@ -1,25 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://dubwal58kx7sa"]
+[gd_scene load_steps=12 format=3 uid="uid://dubwal58kx7sa"]
 
 [ext_resource type="Script" uid="uid://whlqlepev8uy" path="res://Entity/Root.gd" id="1_r3ots"]
-[ext_resource type="Texture2D" uid="uid://dr1a5uuc57etn" path="res://Entity/Enemy/enemy.svg" id="2_g44qq"]
 [ext_resource type="Script" uid="uid://g6aakshfqkv7" path="res://Entity/HealthComponent.gd" id="4_n155c"]
 [ext_resource type="Script" uid="uid://dfaary3cpoq4w" path="res://Entity/MovementComponentPhysics.gd" id="4_s3ny2"]
 [ext_resource type="Script" uid="uid://ds1vtkdirhs53" path="res://Entity/AbilityComponent.gd" id="7_cp6iv"]
 [ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="7_ybtch"]
 [ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="8_jd7op"]
+[ext_resource type="Texture2D" uid="uid://dn8aqb70wmlvg" path="res://images/enemy.png" id="9_kll1m"]
 [ext_resource type="Script" uid="uid://ct6utw586yg55" path="res://Entity/Logics/EnemyComponent.gd" id="9_r3ots"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="10_70g7c"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3x4b2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_g44qq")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fffg7"]
 radius = 29.0
@@ -31,9 +20,6 @@ size = Vector2(70, 70)
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_r3ots")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3x4b2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fffg7")
@@ -64,3 +50,6 @@ shape = SubResource("RectangleShape2D_r3ots")
 [node name="EnemyComponent" type="Node2D" parent="."]
 script = ExtResource("9_r3ots")
 metadata/_custom_type_script = "uid://ct6utw586yg55"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("9_kll1m")
