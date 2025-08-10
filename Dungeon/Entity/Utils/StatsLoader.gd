@@ -5,6 +5,7 @@ static var _stat_resources : Dictionary = {
 	Enums.ObjectTypes.ENEMY : preload("res://Resources/Stats/base_enemy.tres"),
 	Enums.ObjectTypes.PLAYER : preload("res://Resources/Stats/player.tres"),
 	Enums.ObjectTypes.SHURIKEN : preload("res://Resources/Stats/shuriken.tres"),
+	Enums.ObjectTypes.CHARGER : preload("res://Resources/Stats/charger.tres")
 }
 
 static var _default_stat = preload("res://Resources/Stats/default_stats.tres")
@@ -15,6 +16,8 @@ static func load_stats(type : Enums.ObjectTypes) -> Dictionary[Enums.Stats, floa
 	_stats[Enums.Stats.DAMAGE] = _base_stats.damage
 	_stats[Enums.Stats.DAMAGE_MULTIPLIER] = _base_stats.damage_multiplier
 	_stats[Enums.Stats.SPEED] = _base_stats.speed
+	if "speed_multiplier" in _base_stats:
+		_stats[Enums.Stats.SPEED_MULTIPLIER] = _base_stats.speed_multiplier
 	_stats[Enums.Stats.CURRENT_HEALTH] = _base_stats.current_health
 	_stats[Enums.Stats.MAXIMUM_HEALTH] = _base_stats.maximum_health
 	_stats[Enums.Stats.HEALTH_MULTIPLIER] = _base_stats.health_multiplier

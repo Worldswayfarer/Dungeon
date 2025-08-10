@@ -11,3 +11,5 @@ extends Node
 # Scenes
 @warning_ignore("unused_private_class_variable")
 var _portal = preload("res://Core/RoomManagement/portal.tscn")
+@warning_ignore("unused_private_class_variable")
+var _fight_room = preload("res://Core/RoomManagement/fight_room.tscn")

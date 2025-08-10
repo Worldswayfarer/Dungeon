@@ -42,6 +42,7 @@ func handle_movement():
 	
 	
 	_Movement._direction = direction.normalized()
+	Signals.player_position_updated.emit(_parent.position)
 
 
 func shoot(skill_slot):
@@ -53,7 +54,4 @@ func _input(event):
 		shoot(0)
 	if event.is_action_pressed("use_ability_2"):
 		shoot(1)
-
-
-func _on_timer_timeout():
-	Signals.player_position_updated.emit(_parent.position)
+	

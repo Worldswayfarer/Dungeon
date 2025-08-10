@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://by563e667c6sw"]
+
+[ext_resource type="Script" uid="uid://whlqlepev8uy" path="res://Entity/Root.gd" id="1_cn701"]
+[ext_resource type="Script" uid="uid://g6aakshfqkv7" path="res://Entity/HealthComponent.gd" id="2_eup61"]
+[ext_resource type="Script" uid="uid://dfaary3cpoq4w" path="res://Entity/MovementComponentPhysics.gd" id="3_0dueh"]
+[ext_resource type="Script" uid="uid://ds1vtkdirhs53" path="res://Entity/AbilityComponent.gd" id="4_l5wjc"]
+[ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="5_5wiss"]
+[ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="6_kth1n"]
+[ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="7_6jx6r"]
+[ext_resource type="Texture2D" uid="uid://bhxr4bielw3av" path="res://images/charger.png" id="8_cn701"]
+[ext_resource type="Script" uid="uid://c0ftb5khmahqg" path="res://Entity/Logics/Charger.gd" id="9_eup61"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fffg7"]
+radius = 29.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3ots"]
+size = Vector2(70, 70)
+
+[node name="Charger" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_cn701")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fffg7")
+
+[node name="HealthComponent" type="Node2D" parent="."]
+script = ExtResource("2_eup61")
+
+[node name="MovementComponentPhysics" type="Node2D" parent="."]
+script = ExtResource("3_0dueh")
+
+[node name="AbilityComponent" type="Node2D" parent="."]
+script = ExtResource("4_l5wjc")
+
+[node name="EffectComponent" type="Node2D" parent="."]
+script = ExtResource("5_5wiss")
+
+[node name="StatsComponent" type="Node2D" parent="."]
+script = ExtResource("6_kth1n")
+
+[node name="HitBoxComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("7_6jx6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+shape = SubResource("RectangleShape2D_r3ots")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("8_cn701")
+
+[node name="ChargerComponent" type="Node2D" parent="."]
+script = ExtResource("9_eup61")
+metadata/_custom_type_script = "uid://c0ftb5khmahqg"

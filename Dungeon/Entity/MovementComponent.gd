@@ -19,4 +19,5 @@ func change_direction(new_direction : Vector2):
 func _physics_process(delta):
 	if _Stats:
 		var speed = _Stats.get_stat(Enums.Stats.SPEED)
-		_parent.position += _direction * speed * delta
+		var speed_multi = _Stats.get_stat(Enums.Stats.SPEED_MULTIPLIER)
+		_parent.position += _direction * speed * speed_multi * delta
