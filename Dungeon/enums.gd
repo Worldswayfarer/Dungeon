@@ -35,6 +35,7 @@ enum Stats
 
 enum ObjectTypes
 {
+	DEFAULT,
 	BASE,
 	BULLET,
 	BOMB,

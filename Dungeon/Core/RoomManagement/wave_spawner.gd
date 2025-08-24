@@ -8,7 +8,7 @@ var _offset = 30
 var _spawn_offset = _offset/2.0
 var _time_next_wave
 var _timer_max = 3
-var _management
+var _management : WaveManagement
 
 
 func _ready():
@@ -23,8 +23,8 @@ func _process(delta):
 	_time_next_wave -= delta
 	if _time_next_wave <= 0:
 		for x in range(randi_range(1,3)):
-			var wave = get_next_cluster()
-			spawnEnemies(wave[0], wave[1])
+			var wave : WaveUnit = get_next_cluster()
+			spawnEnemies(wave.type, wave.count)
 
 
 func get_next_cluster():
