@@ -6,6 +6,8 @@ var _factory : ObjectFactory
 func _ready():
 	_factory = References._factory
 
+	StatLoader.read_stats()
+
 	_factory.add_child(_factory.get_object_instance(Enums.ObjectTypes.PLAYER))
 
 	

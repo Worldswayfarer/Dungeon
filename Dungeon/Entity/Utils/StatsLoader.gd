@@ -8,6 +8,12 @@ static var _stat_resources : Dictionary = {
 	Enums.ObjectTypes.CHARGER : preload("res://Resources/Stats/charger.tres")
 }
 
+
+static func read_stats() -> void:
+	for file_name in DirAccess.get_files_at("res://Resources/Stats/"):
+		var stats : Stats = load(file_name)
+		_stat_resources[file_name] = stats
+
 static var _default_stat = preload("res://Resources/Stats/default_stats.tres")
 
 static func load_stats(type : Enums.ObjectTypes) -> Dictionary[Enums.Stats, float]:
