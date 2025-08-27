@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_w6otm")
+type = "spell_bullet"
 damage = 10
 damage_multiplier = 1
 speed = 500

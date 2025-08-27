@@ -33,18 +33,7 @@ enum Stats
 }
 
 
-enum ObjectTypes
-{
-	DEFAULT,
-	BASE,
-	BULLET,
-	BOMB,
-	ENEMY,
-	RANGEDENEMY,
-	CHARGER,
-	PLAYER,
-	SHURIKEN,
-}
+
 
 
 

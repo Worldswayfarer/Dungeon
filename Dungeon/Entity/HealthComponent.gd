@@ -25,7 +25,7 @@ func apply_damage(damage):
 			return
 			
 		# Player Death will be handled externally
-		if _parent._object_type == Enums.ObjectTypes.PLAYER:
+		if _parent._object_type == IDS.PLAYER:
 			Signals.player_death.emit()
 			return
 		_parent.queue_free()

@@ -18,7 +18,7 @@ var _on_hit_effects = []
 var _upgrades = []
 
 
-func _init(name : Enums.ObjectTypes, current_level : int, maximum_level : int, is_castable : bool,
+func _init(name : StringName, current_level : int, maximum_level : int, is_castable : bool,
  main_skill = null, self_effects = [], on_hit_effects = [], upgrades = []):
 	_name = name
 	_current_level = current_level

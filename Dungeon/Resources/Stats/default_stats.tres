@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://0kor7v2wil4v"]
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://d3mmhsul72gap"]
 
 [ext_resource type="Script" uid="uid://bujq2kg01bb4w" path="res://Entity/Utils/Stats.gd" id="1_3t7pv"]
 
 [resource]
 script = ExtResource("1_3t7pv")
-damage = 1
+type = &"default"
+damage = 10
 damage_multiplier = 1
 speed = 100
+speed_multiplier = 1
 current_health = 10
 maximum_health = 10
 health_multiplier = 1

@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 
 
 func handle_hitbox_entered(area):
-	if area.get_type() == Enums.ObjectTypes.PLAYER:
+	if area.get_type() == IDS.PLAYER:
 		_parent.queue_free()
 		return
 	area.add_effects(_effects)

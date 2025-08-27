@@ -30,7 +30,7 @@ func _process(delta):
 	if !_target:
 		return
 	if _damage_timer <= 0:
-		_shooter.use(_parent, Enums.ObjectTypes.BULLET, _target, 0b100, 0b010)
+		_shooter.use(_parent, IDS.SPELL_BULLET, _target, 0b100, 0b010)
 		_damage_timer = _max_timer
 
 

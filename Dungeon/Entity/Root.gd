@@ -3,16 +3,16 @@ extends Node2D
 class_name Root
 
 var _registered_components: Dictionary = {}
-var _object_type : Enums.ObjectTypes
+var _object_type : StringName
 
 func _enter_tree():
 	register_components()
 
 
-func setup(type : Enums.ObjectTypes) -> void:
+func setup(type : StringName) -> void:
 	_object_type = type
 
-func get_type() -> Enums.ObjectTypes:
+func get_type() -> StringName:
 	return _object_type
 
 func register_components():

@@ -33,7 +33,7 @@ func get_next_cluster():
 	return next
 
 
-func spawnEnemies(type : Enums.ObjectTypes, count : int = 1):
+func spawnEnemies(type : StringName, count : int = 1):
 	
 	var cluster_position = Vector2(
 		randi_range(_offset, _screen_size.x - _offset),

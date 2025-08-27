@@ -1,6 +1,7 @@
 extends Resource
 class_name Stats
 
+@export var type : StringName = IDS.DEFAULT
 
 @export var damage = 10
 @export var damage_multiplier = 1

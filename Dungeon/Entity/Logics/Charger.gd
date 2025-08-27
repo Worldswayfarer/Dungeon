@@ -23,7 +23,7 @@ func get_component_type() -> Enums.ComponentTypes:
 	return Enums.ComponentTypes.LOGIC
 
 func _ready():
-	_parent._object_type = Enums.ObjectTypes.CHARGER
+	_parent._object_type = IDS.ENEMY_CHARGER
 
 	_Movement = get_component(Enums.ComponentTypes.MOVEMENT_PHYSICS)
 	_Stats = get_component(Enums.ComponentTypes.STATS)

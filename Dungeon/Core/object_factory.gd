@@ -7,15 +7,15 @@ class_name ObjectFactory
 
 func _enter_tree():
 	
-	_object_scenes[Enums.ObjectTypes.ENEMY] = preload("res://Entity/Enemy/enemy.tscn")
-	_object_scenes[Enums.ObjectTypes.RANGEDENEMY] = preload("res://Entity/Enemy/ranged_enemy.tscn")
-	_object_scenes[Enums.ObjectTypes.BULLET] = preload("res://Abilities/Bullet/Bullet.tscn")
-	_object_scenes[Enums.ObjectTypes.PLAYER] = preload("res://Entity/Player/player.tscn")
-	_object_scenes[Enums.ObjectTypes.SHURIKEN] = preload("res://Abilities/Shuriken/Shuriken.tscn")
-	_object_scenes[Enums.ObjectTypes.CHARGER] = preload("res://Entity/Enemy/charger.tscn")
+	_object_scenes[IDS.ENEMY] = preload("res://Entity/Enemy/enemy.tscn")
+	_object_scenes[IDS.ENEMY_RANGED] = preload("res://Entity/Enemy/ranged_enemy.tscn")
+	_object_scenes[IDS.SPELL_BULLET] = preload("res://Abilities/Bullet/Bullet.tscn")
+	_object_scenes[IDS.PLAYER] = preload("res://Entity/Player/player.tscn")
+	_object_scenes[IDS.SPELL_SHURIKEN] = preload("res://Abilities/Shuriken/Shuriken.tscn")
+	_object_scenes[IDS.ENEMY_CHARGER] = preload("res://Entity/Enemy/charger.tscn")
 
 
-func get_object_instance(type : Enums.ObjectTypes):
+func get_object_instance(type : StringName):
 	var object = _object_scenes[type]
 	if object:
 		var new_obj = _object_scenes[type].instantiate()

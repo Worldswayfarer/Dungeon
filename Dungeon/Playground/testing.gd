@@ -1,3 +1,0 @@
-
-
-var temp = IDS.GOBLIN

@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_n8uvj")
+type = "spell_shuriken"
 damage = 5
 damage_multiplier = 1
 speed = 300

@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_2b6mq")
+type = "player"
 damage = 1
 damage_multiplier = 1
 speed = 150

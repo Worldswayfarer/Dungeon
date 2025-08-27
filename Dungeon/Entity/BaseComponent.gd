@@ -11,7 +11,7 @@ func _register_component(_owner : Root):
 func get_component(type : Enums.ComponentTypes) -> BaseComponent:
 	return _parent.get_component(type)
 
-func get_type() -> Enums.ObjectTypes:
+func get_type() -> StringName:
 	return _parent.get_type()
 
 # Should be overwritten in child class
