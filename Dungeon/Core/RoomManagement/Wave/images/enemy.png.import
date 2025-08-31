@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c40phxx4qhsp"
-path="res://.godot/imported/Portal.png-d83fb944ba1b27f3691ed5151dc4d6c4.ctex"
+uid="uid://dn8aqb70wmlvg"
+path="res://.godot/imported/enemy.png-37aa13e8d7203dc1410b6d5d51a7410c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Core/RoomManagement/Portal.png"
-dest_files=["res://.godot/imported/Portal.png-d83fb944ba1b27f3691ed5151dc4d6c4.ctex"]
+source_file="res://Core/RoomManagement/Wave/images/enemy.png"
+dest_files=["res://.godot/imported/enemy.png-37aa13e8d7203dc1410b6d5d51a7410c.ctex"]
 
 [params]
 

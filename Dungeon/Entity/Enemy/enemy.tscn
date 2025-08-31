@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://ds1vtkdirhs53" path="res://Entity/AbilityComponent.gd" id="7_cp6iv"]
 [ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="7_ybtch"]
 [ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="8_jd7op"]
-[ext_resource type="Texture2D" uid="uid://dn8aqb70wmlvg" path="res://images/enemy.png" id="9_kll1m"]
+[ext_resource type="Texture2D" uid="uid://dn8aqb70wmlvg" path="res://Core/RoomManagement/Wave/images/enemy.png" id="9_kll1m"]
 [ext_resource type="Script" uid="uid://ct6utw586yg55" path="res://Entity/Logics/EnemyComponent.gd" id="9_r3ots"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="10_70g7c"]
 

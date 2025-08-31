@@ -4,7 +4,7 @@ extends Node2D
 var _factory : ObjectFactory
 
 func _ready():
-	_factory = References._factory
+	_factory = References.factory
 
 	StatLoader.read_stats()
 

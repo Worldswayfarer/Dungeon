@@ -13,7 +13,7 @@ var _management : WaveManagement
 
 func _ready():
 	_screen_size = get_viewport_rect().size
-	_factory = References._factory
+	_factory = References.factory
 	randomize()
 	_time_next_wave = _timer_max
 	_management = get_parent()

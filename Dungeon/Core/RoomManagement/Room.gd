@@ -1,9 +1,9 @@
 
 extends Node2D
 
-var _fight_room = References._fight_room
+var _fight_room = References.fight_room
 
-var _portal_scene = References._portal
+var _portal_scene = References.portal
 var _center_position = Vector2(960, 540)
 
 func _ready():

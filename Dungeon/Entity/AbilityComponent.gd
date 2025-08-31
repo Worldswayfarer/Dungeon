@@ -16,8 +16,8 @@ func _ready():
 
 
 func setup():
-	abilities[IDS.SPELL_BULLET] = References._skill_tree.get_skill(IDS.SPELL_BULLET)
-	abilities[IDS.SPELL_SHURIKEN] = References._skill_tree.get_skill(IDS.SPELL_SHURIKEN)
+	abilities[IDS.SPELL_BULLET] = References.skill_tree.get_skill(IDS.SPELL_BULLET)
+	abilities[IDS.SPELL_SHURIKEN] = References.skill_tree.get_skill(IDS.SPELL_SHURIKEN)
 	_ability_slots += [IDS.SPELL_BULLET]
 	_ability_slots += [IDS.SPELL_SHURIKEN]
 

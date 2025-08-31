@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c33ihbcb7xfpt"
-path="res://.godot/imported/ranged_enemy.png-bd0db8eb5a8c7342eaacbaa5db5a66b0.ctex"
+uid="uid://c40phxx4qhsp"
+path="res://.godot/imported/Portal.png-8eec10286f958d18a77bbb5d4b0fe808.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/ranged_enemy.png"
-dest_files=["res://.godot/imported/ranged_enemy.png-bd0db8eb5a8c7342eaacbaa5db5a66b0.ctex"]
+source_file="res://Core/RoomManagement/Wave/images/Portal.png"
+dest_files=["res://.godot/imported/Portal.png-8eec10286f958d18a77bbb5d4b0fe808.ctex"]
 
 [params]
 

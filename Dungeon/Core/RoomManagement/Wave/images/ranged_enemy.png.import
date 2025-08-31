@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhxr4bielw3av"
-path="res://.godot/imported/charger.png-091d3333c809a1de5caf795d162aeb90.ctex"
+uid="uid://c33ihbcb7xfpt"
+path="res://.godot/imported/ranged_enemy.png-564620e595e9a5d9bce31d4964ad08ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/charger.png"
-dest_files=["res://.godot/imported/charger.png-091d3333c809a1de5caf795d162aeb90.ctex"]
+source_file="res://Core/RoomManagement/Wave/images/ranged_enemy.png"
+dest_files=["res://.godot/imported/ranged_enemy.png-564620e595e9a5d9bce31d4964ad08ee.ctex"]
 
 [params]
 

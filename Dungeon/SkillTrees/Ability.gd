@@ -2,7 +2,7 @@ class_name Ability
 var _effects = []
 
 func use(caster, projectile, direction : Vector2 = Vector2.ZERO, layer = 0b010, mask = 0b100):
-	var factory = References._factory
+	var factory = References.factory
 	var new_projectile = factory.get_object_instance(projectile)
 	factory.add_child(new_projectile)
 	var logic = new_projectile.get_component(Enums.ComponentTypes.LOGIC)

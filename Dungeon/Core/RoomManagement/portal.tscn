@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bawturpyjfvn1"]
 
 [ext_resource type="Script" uid="uid://chpqx34yscvgf" path="res://Core/RoomManagement/portal.gd" id="1_lmr1o"]
-[ext_resource type="Texture2D" uid="uid://c40phxx4qhsp" path="res://Core/RoomManagement/Portal.png" id="1_peapx"]
+[ext_resource type="Texture2D" uid="uid://c40phxx4qhsp" path="res://Core/RoomManagement/Wave/images/Portal.png" id="1_peapx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1rl7m"]
 height = 64.0
