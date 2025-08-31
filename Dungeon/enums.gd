@@ -21,22 +21,6 @@ enum EntityTypes
 }
 
 
-enum Stats
-{
-	DAMAGE,
-	DAMAGE_MULTIPLIER,
-	CURRENT_HEALTH,
-	MAXIMUM_HEALTH,
-	HEALTH_MULTIPLIER,
-	SPEED,
-	SPEED_MULTIPLIER,
-}
-
-
-
-
-
-
 enum Effects
 {
 	BLEED,

@@ -22,9 +22,9 @@ func _process(_delta):
 	
 
 func emit_player_health():
-	var current_health = _Stats.get_stat(Enums.Stats.CURRENT_HEALTH)
-	var max_health = _Stats.get_stat(Enums.Stats.MAXIMUM_HEALTH)
-	var multiplier = _Stats.get_stat(Enums.Stats.HEALTH_MULTIPLIER)
+	var current_health = _Stats.get_stat(STATS.HEALTH_CURRENT)
+	var max_health = _Stats.get_stat(STATS.HEALTH_MAXIMUM)
+	var multiplier = _Stats.get_stat(STATS.HEALTH_MULTIPLIER)
 	Signals.player_health.emit(current_health * multiplier, max_health * multiplier)
 
 

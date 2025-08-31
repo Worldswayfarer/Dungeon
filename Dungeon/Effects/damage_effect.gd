@@ -14,7 +14,7 @@ func clone():
 
 func scale(caster : Root):
 	var stats = caster.get_component(Enums.ComponentTypes.STATS)._stats
-	_damage *= stats[Enums.Stats.DAMAGE] * stats[Enums.Stats.DAMAGE_MULTIPLIER]
+	_damage *= stats[STATS.DAMAGE] * stats[STATS.DAMAGE_MULTIPLIER]
 
 
 func apply_effect(target):

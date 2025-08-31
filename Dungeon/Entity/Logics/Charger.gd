@@ -64,13 +64,13 @@ func charge():
 	change_direction(_player_position)
 	_is_charging = true
 	_charge_duration = _charge_duration_max
-	_Stats.change_stat(Enums.Stats.SPEED_MULTIPLIER, 4)
+	_Stats.change_stat(STATS.SPEED_MULTIPLIER, 4)
 
 
 func stop_charging():
 	_is_charging = false
 	_time_to_charge = _time_to_charge_max
-	_Stats.change_stat(Enums.Stats.SPEED_MULTIPLIER, 1)
+	_Stats.change_stat(STATS.SPEED_MULTIPLIER, 1)
 
 func change_direction(player_position):
 	_player_position = player_position
