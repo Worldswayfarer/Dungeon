@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn8aqb70wmlvg"
-path="res://.godot/imported/enemy.png-37aa13e8d7203dc1410b6d5d51a7410c.ctex"
+uid="uid://rbjqlf4rnpdt"
+path="res://.godot/imported/dude.png-5aa3321899a0662a17e328cbd711e254.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Core/RoomManagement/Wave/images/enemy.png"
-dest_files=["res://.godot/imported/enemy.png-37aa13e8d7203dc1410b6d5d51a7410c.ctex"]
+source_file="res://images/dude.png"
+dest_files=["res://.godot/imported/dude.png-5aa3321899a0662a17e328cbd711e254.ctex"]
 
 [params]
 

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="5_5wiss"]
 [ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="6_kth1n"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="7_6jx6r"]
-[ext_resource type="Texture2D" uid="uid://bhxr4bielw3av" path="res://Core/RoomManagement/Wave/images/charger.png" id="8_cn701"]
+[ext_resource type="Texture2D" uid="uid://bhxr4bielw3av" path="res://images/charger.png" id="8_cn701"]
 [ext_resource type="Script" uid="uid://c0ftb5khmahqg" path="res://Entity/Logics/Charger.gd" id="9_eup61"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fffg7"]

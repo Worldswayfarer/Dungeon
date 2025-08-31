@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://ds7n2dgjbodu1" path="res://Entity/StatsComponent.gd" id="7_apqbi"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="8_nqx83"]
 [ext_resource type="Script" uid="uid://xbhee3nfghhw" path="res://Entity/Logics/RangedEnemy.gd" id="9_hdahl"]
-[ext_resource type="Texture2D" uid="uid://c33ihbcb7xfpt" path="res://Core/RoomManagement/Wave/images/ranged_enemy.png" id="9_ycidk"]
+[ext_resource type="Texture2D" uid="uid://c33ihbcb7xfpt" path="res://images/ranged_enemy.png" id="9_ycidk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fffg7"]
 radius = 29.0

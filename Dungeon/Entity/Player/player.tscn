@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bmsc8ff6n2vde" path="res://Entity/EffectComponent.gd" id="7_evogn"]
 [ext_resource type="Script" uid="uid://dh377jw0dgthe" path="res://Entity/HitBoxComponent.gd" id="9_1eqak"]
 [ext_resource type="Script" uid="uid://cvrx1ury3gm6b" path="res://Entity/Logics/PlayerComponent.gd" id="9_k7rle"]
-[ext_resource type="Texture2D" uid="uid://rbjqlf4rnpdt" path="res://Core/RoomManagement/Wave/images/dude.png" id="9_ve7px"]
+[ext_resource type="Texture2D" uid="uid://rbjqlf4rnpdt" path="res://images/dude.png" id="9_ve7px"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7skvd"]
 radius = 9.0
