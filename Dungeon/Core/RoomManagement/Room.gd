@@ -15,18 +15,13 @@ func _ready():
 
 
 func next_room():
-	cleanup()
-	add_child(_fight_room.instantiate())
+	var portal = get_node("Portal")
+	remove_child(portal)
+	Spawner.start_spawning()
 
 
 func end_of_wave():
-	cleanup()
+	Spawner.stop_spawning()
 	var new_portal = _portal_scene.instantiate()
 	new_portal.position = _center_position
 	add_child(new_portal)
-
-
-func cleanup():
-	for child in get_children():
-		remove_child(child)
-		child.queue_free()

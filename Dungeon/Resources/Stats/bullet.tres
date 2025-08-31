@@ -8,6 +8,7 @@ type = "spell_bullet"
 damage = 10
 damage_multiplier = 1
 speed = 500
+speed_multiplier = 1
 current_health = 10
 maximum_health = 10
 health_multiplier = 1

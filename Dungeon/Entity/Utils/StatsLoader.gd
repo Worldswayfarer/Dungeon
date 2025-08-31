@@ -8,12 +8,12 @@ static var _path = "res://Resources/Stats/"
 static func read_stats() -> void:
 	for file_name in DirAccess.get_files_at(_path):
 		var stats : Stats  = load(_path + file_name)
-		_stat_resources[stats.type] = stats
+		_stat_resources[stats.type] = stats.duplicate()
 
 static var _default_stat = preload("res://Resources/Stats/default_stats.tres")
 
 static func load_stats(type : StringName) -> Dictionary[StringName, float]:
-	var _base_stats : Stats = _stat_resources.get(type, _default_stat).duplicate()
+	var _base_stats : Stats = _stat_resources.get(type, _default_stat)
 	var _stats : Dictionary[StringName, float] = {}
 	_stats[STATS.DAMAGE] = _base_stats.damage
 	_stats[STATS.DAMAGE_MULTIPLIER] = _base_stats.damage_multiplier
