@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://5lu84eomwsmw"]
+[gd_scene load_steps=5 format=3 uid="uid://5lu84eomwsmw"]
 
 [ext_resource type="Script" uid="uid://tfqxcnmmcg83" path="res://Menu/FPS_Counter.gd" id="1_qlj8p"]
 [ext_resource type="Script" uid="uid://bhb6evy8rg1pt" path="res://Menu/player_health_bar.gd" id="2_pi81i"]
+[ext_resource type="Script" uid="uid://fam62a2o1d5j" path="res://Menu/RoundTime.gd" id="3_lhoek"]
+[ext_resource type="Resource" uid="uid://lfo4nw5pvgwv" path="res://Resources/SharedData/round_time.tres" id="4_bse2e"]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -25,3 +27,14 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("2_pi81i")
 metadata/_custom_type_script = "uid://bhb6evy8rg1pt"
+
+[node name="RoundTime" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Default"
+script = ExtResource("3_lhoek")
+_time_passed = ExtResource("4_bse2e")

@@ -11,12 +11,19 @@ func _ready():
 
 	Signals.end_of_wave.connect(end_of_wave)
 	Signals.access_next_room.connect(next_room)
-	Signals.restart_game.connect(next_room)
+	Signals.restart_game.connect(restart_game)
+
+
+func restart_game():
+	for child in get_children():
+		child.queue_free()
+	add_child(_fight_room.instantiate())
+	
 
 
 func next_room():
 	var portal = get_node("Portal")
-	remove_child(portal)
+	portal.queue_free()
 	Spawner.start_spawning()
 
 

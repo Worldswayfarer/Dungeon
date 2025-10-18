@@ -26,5 +26,4 @@ func get_object_instance(type : StringName):
 
 func cleanup():
 	for child in get_children():
-		remove_child(child)
 		child.queue_free()

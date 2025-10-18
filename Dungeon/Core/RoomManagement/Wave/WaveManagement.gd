@@ -3,13 +3,15 @@ class_name WaveManagement
 
 var _path = "res://Resources/Waves/"
 
+@export var spawner : Spawner
+
 var _section_timer_max = 15
-var _section_timer_current
+@export var _section_timer_current : RoundTime
 var _is_wave_running : bool = true
 
 var _patterns : Array[Wave] = []
 var _current_pattern : Wave
-var _current_wave : int = 0
+var _current_wave : int = 2
 var _max_wave : int = 0
 
 func _ready():
@@ -25,14 +27,15 @@ func next_spawn():
 	return _current_pattern.pattern[next]
 
 func next_wave():
-	if _current_wave < _max_wave:
+	spawner.cleanup()
+	if _current_wave < _max_wave - 1:
 		_current_wave += 1
 	start_room()
 	
 
 func start_room():
 	_current_pattern = _patterns[_current_wave]
-	_section_timer_current = _section_timer_max
+	_section_timer_current.current_round_time = _section_timer_max
 	_is_wave_running = true
 
 func _read_waves() -> void:
@@ -43,7 +46,7 @@ func _read_waves() -> void:
 
 
 func _process(delta):
-	_section_timer_current -= delta
-	if _is_wave_running and _section_timer_current <= 0:
+	_section_timer_current.current_round_time -= delta
+	if _is_wave_running and _section_timer_current.current_round_time <= 0:
 		_is_wave_running = false
 		Signals.end_of_wave.emit()

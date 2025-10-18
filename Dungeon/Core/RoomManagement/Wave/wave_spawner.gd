@@ -32,6 +32,11 @@ func _process(delta):
 		spawnEnemies(wave.type, wave.count)
 
 
+func cleanup():
+	for child in get_children():
+		child.queue_free()
+
+
 func get_next_cluster():
 	var next = _management.next_spawn()
 	_time_next_wave = _timer_max

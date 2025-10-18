@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="RoundTime" load_steps=2 format=3 uid="uid://lfo4nw5pvgwv"]
+
+[ext_resource type="Script" uid="uid://dh6u62w65m4kc" path="res://Core/RoomManagement/Wave/RoundTime.gd" id="1_h3blv"]
+
+[resource]
+script = ExtResource("1_h3blv")
+current_round_time = 0.0
+metadata/_custom_type_script = "uid://dh6u62w65m4kc"
