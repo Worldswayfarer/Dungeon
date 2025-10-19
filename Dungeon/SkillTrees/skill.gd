@@ -6,9 +6,13 @@ var _current_level = 0
 var _maximum_level = 3
 
 
+var _is_passive : bool = false
 var _is_castable : bool
 var _main_skill = null
 
+
+var _cooldown : float = 0
+var _last_casted : float = - 10000
 
 # 2-dimensional array, every level is separate
 var _self_effects = []
@@ -19,7 +23,7 @@ var _upgrades = []
 
 
 func _init(name : StringName, current_level : int, maximum_level : int, is_castable : bool,
- main_skill = null, self_effects = [], on_hit_effects = [], upgrades = []):
+ main_skill = null, self_effects = [], on_hit_effects = [], upgrades = [], cooldown = 0):
 	_name = name
 	_current_level = current_level
 	_maximum_level = maximum_level
@@ -28,6 +32,7 @@ func _init(name : StringName, current_level : int, maximum_level : int, is_casta
 	_self_effects = self_effects
 	_on_hit_effects = on_hit_effects
 	_upgrades = upgrades
+	_cooldown = cooldown
 
 
 func level_up():
@@ -77,9 +82,13 @@ func aggregate_self_effects(caster):
 
 
 func use_skill(caster):
+	var current_time = Time.get_ticks_msec() / 1000.0
+	if _is_passive or ( current_time - _last_casted) < _cooldown:
+		return
 	if _main_skill != null:
 		aggregate_on_hit_effects(caster)
 		_main_skill.use(caster, _name)
+		_last_casted = current_time
 	var effects = aggregate_self_effects(caster)
 	for effect in effects:
 		effect.apply_effect(caster)

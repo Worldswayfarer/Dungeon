@@ -11,7 +11,7 @@ var _is_wave_running : bool = true
 
 var _patterns : Array[Wave] = []
 var _current_pattern : Wave
-var _current_wave : int = 2
+var _current_wave : int = 0
 var _max_wave : int = 0
 
 func _ready():

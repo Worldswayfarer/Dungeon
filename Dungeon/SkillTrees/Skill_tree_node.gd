@@ -26,6 +26,6 @@ func load_tree():
 	effects.append(level_3)
 	effects.append(level_4)
 	_skills[IDS.SPELL_BULLET] = Skill.new(IDS.SPELL_BULLET,
-		0, 3, true, main_effect, [], effects)
+		0, 3, true, main_effect, [], effects, [], 3)
 	_skills[IDS.SPELL_SHURIKEN] = Skill.new(IDS.SPELL_SHURIKEN,
-		0, 3, true, main_effect, [], effects)
+		0, 3, true, main_effect, [], effects, [], 2)
