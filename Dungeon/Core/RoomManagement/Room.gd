@@ -24,11 +24,9 @@ func restart_game():
 func next_room():
 	var portal = get_node("Portal")
 	portal.queue_free()
-	Spawner.start_spawning()
 
 
 func end_of_wave():
-	Spawner.stop_spawning()
 	var new_portal = _portal_scene.instantiate()
 	new_portal.position = _center_position
 	add_child(new_portal)
