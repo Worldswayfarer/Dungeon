@@ -1,13 +1,12 @@
 extends Node2D
 class_name WaveManagement
 
-var _path = "res://Resources/Waves/"
 
 @export var spawner : Spawner
 
 
-var _patterns : Array[Wave] = []
-var _current_pattern : Wave
+var _patterns : Array[Encounter] = []
+var _current_pattern : Encounter
 var _current_room : int = 0
 var _max_room : int = 0
 
@@ -16,7 +15,7 @@ var _room_cleared : bool = false
 func _ready():
 	Signals.access_next_room.connect(next_room)
 
-	_read_waves()
+	_patterns = EncounterLoader.load_all_encounters()
 	start_room()
 
 func _process(_delta : float):
@@ -36,9 +35,3 @@ func next_room():
 func start_room():
 	_current_pattern = _patterns[_current_room]
 	spawner.spawnEncounter(_current_pattern)
-
-func _read_waves() -> void:
-	for file_name in DirAccess.get_files_at(_path):
-		var w : Wave  = load(_path + file_name).duplicate()
-		_patterns += [w]
-		_max_room += 1

@@ -21,8 +21,8 @@ func cleanup():
 		child.queue_free()
 
 
-func spawnEncounter(encounter : Wave):
-	for cluster : WaveUnit in encounter.pattern:
+func spawnEncounter(encounter : Encounter):
+	for cluster : EncounterUnit in encounter.pattern:
 		spawnCluster(cluster.type, cluster.count)
 
 
