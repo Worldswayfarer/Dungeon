@@ -1,0 +1,7 @@
+[
+  { "type": "enemy", "count": 3 },
+  { "type": "enemy", "count": 3 },
+  { "type": "enemy_ranged", "count": 2 },
+  { "type": "enemy_ranged", "count": 2 },
+  { "type": "enemy_charger", "count": 2 }
+]

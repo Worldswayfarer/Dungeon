@@ -1,11 +1,11 @@
 extends Node2D
 class_name Spawner
 
-var _factory
-var _screen_size = Vector2.ZERO
-var _offset = 30
+var _factory : ObjectFactory
+var _screen_size : Vector2 = Vector2.ZERO
+var _offset : float = 30
 
-var _spawn_offset = _offset/2.0
+var _spawn_offset : float = _offset/2.0
 
 
 func _ready():

@@ -1,6 +1,11 @@
 {
-    "godotTools.editorPath.godot4": "c:\\Users\\Kenny\\source\\GODOT\\Godot_v4.4.1-stable_win64.exe",
-    "editor.detectIndentation": false,
-	"editor.insertSpaces": false,    // true = spaces, false = tabs
-	"editor.tabSize": 4  	
+  "godotTools.editorPath.godot4": "c:\\Users\\Kenny\\source\\GODOT\\Godot_v4.4.1-stable_win64.exe",
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": false, // true = spaces, false = tabs
+  "editor.tabSize": 4,
+  "editor.formatOnSave": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

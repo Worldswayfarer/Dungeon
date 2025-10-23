@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://coesoluyk25br"]
+[gd_scene load_steps=2 format=3 uid="uid://coesoluyk25br"]
 
-[ext_resource type="Script" uid="uid://bhakd5ko7xxe0" path="res://Core/RoomManagement/Wave/WaveManagement.gd" id="1_tybpu"]
 [ext_resource type="Script" uid="uid://ctsrimedmvuhm" path="res://Core/RoomManagement/Wave/spawner.gd" id="2_x60iu"]
 
-[node name="WaveManagement" type="Node2D" node_paths=PackedStringArray("spawner")]
-script = ExtResource("1_tybpu")
-spawner = NodePath("WaveSpawner")
-
-[node name="WaveSpawner" type="Node2D" parent="."]
+[node name="Spawner" type="Node2D"]
 script = ExtResource("2_x60iu")
