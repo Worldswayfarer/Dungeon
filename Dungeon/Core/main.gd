@@ -2,9 +2,13 @@ extends Node2D
 
 
 var _factory : ObjectFactory
+var _upgrade_system : UpgradeSystem
 
 func _ready():
 	_factory = References.factory
+
+	_upgrade_system = UpgradeSystem.new()
+	add_child(_upgrade_system)
 
 	StatLoader.read_stats()
 
