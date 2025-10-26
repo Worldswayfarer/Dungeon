@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbavff241udq8"]
+
+[ext_resource type="Script" uid="uid://cebcdiv3ejdd3" path="res://Core/UpgradeSystem/ugrade_ui.gd" id="1_qse5p"]
+
+[node name="UgradeUi" type="Control" node_paths=PackedStringArray("container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qse5p")
+container = NodePath("CenterContainer/HBoxContainer")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -150.0
+offset_right = 332.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1

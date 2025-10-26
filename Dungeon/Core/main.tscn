@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://viabfeu5qm28"]
+[gd_scene load_steps=12 format=3 uid="uid://viabfeu5qm28"]
 
 [ext_resource type="Script" uid="uid://ch2r8vfhoullw" path="res://Core/main.gd" id="1_f88rg"]
 [ext_resource type="PackedScene" uid="uid://c5pu500chidna" path="res://Map/map.tscn" id="1_sjd4x"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://di5mh25hudy2i" path="res://Menu/PauseMenuBackground.png" id="7_totu5"]
 [ext_resource type="PackedScene" uid="uid://5lu84eomwsmw" path="res://Menu/hud.tscn" id="10_qgwhw"]
 [ext_resource type="Script" uid="uid://bx2i15pbka82w" path="res://Menu/ExitButton.gd" id="10_v7r7x"]
+[ext_resource type="PackedScene" uid="uid://dbavff241udq8" path="res://Core/UpgradeSystem/UgradeUI.tscn" id="11_4ewli"]
 [ext_resource type="Script" uid="uid://bd3gsbuhxejfw" path="res://Menu/RestartButton.gd" id="11_ua6uo"]
 
 [node name="main" type="Node2D"]
@@ -53,6 +54,12 @@ text = "Exit"
 script = ExtResource("10_v7r7x")
 
 [node name="HUD" parent="." instance=ExtResource("10_qgwhw")]
+
+[node name="UgradeUi" parent="." instance=ExtResource("11_4ewli")]
+offset_left = 1174.29
+offset_top = 492.55
+offset_right = 1174.29
+offset_bottom = 492.55
 
 [connection signal="pressed" from="Menu/RestartButton" to="Menu/RestartButton" method="_on_pressed"]
 [connection signal="button_down" from="Menu/ExitButton" to="Menu/ExitButton" method="end_game"]

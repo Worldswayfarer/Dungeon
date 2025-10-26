@@ -8,6 +8,13 @@ func _ready():
 	_upgrades = load_upgrades()
 
 
+
+func give_upgrade() -> Upgrade:
+	var idx = randi_range(0, len(_upgrades) - 1)
+	return _upgrades[idx]
+
+
+
 static func load_upgrades() -> Array[Upgrade]:
 	var path : String = "res://Data/Upgrades/first.json/"
 	var file := FileAccess.open(path, FileAccess.READ)
@@ -20,7 +27,7 @@ static func load_upgrades() -> Array[Upgrade]:
 		push_error("Invalid JSON format in: " + path)
 		return []
 
-	var upgrades = []
+	var upgrades : Array[Upgrade] = []
 	for entry in parsed:
 		var upgrade := Upgrade.new()
 		upgrade.ability_name = entry.get("ability_name", "")

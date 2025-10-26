@@ -20,6 +20,10 @@ signal entered_portal()
 signal pause_game()
 signal restart_game()
 
+# Upgrades
+signal upgrade_selected(upgrade : Upgrade)
+signal display_upgrades(upgrades: Array[Upgrade])
+
 
 var signals = [
 	player_position_updated,
@@ -32,4 +36,6 @@ var signals = [
 	pause_game,
 	restart_game,
 	round_time,
+	upgrade_selected,
+	display_upgrades,
 	]

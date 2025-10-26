@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://xraqx0ukwbji"]
+
+[ext_resource type="Script" uid="uid://n4pkorlxbdqq" path="res://Core/UpgradeSystem/UpgradeDisplay.gd" id="1_rblpa"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rblpa"]
+size = Vector2(200, 300)
+
+[node name="Upgrade" type="TextureButton"]
+custom_minimum_size = Vector2(200, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -150.0
+offset_right = 100.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("PlaceholderTexture2D_rblpa")
+script = ExtResource("1_rblpa")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.0
+offset_top = 64.0
+offset_right = 22.0
+offset_bottom = 87.0
+grow_horizontal = 2
+text = "Nett hier"
