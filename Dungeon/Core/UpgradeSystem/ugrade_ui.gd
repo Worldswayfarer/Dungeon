@@ -7,7 +7,8 @@ class_name UpgradeUI
 var upgrade_card = preload("res://Core/UpgradeSystem/UpgradeCard.tscn")
 
 func ready():
-	Signals
+	Signals.display_upgrades.connect(display_upgrades)
+	Signals.upgrade_selected.connect(clear_upgrades)
 
 
 func display_upgrades( upgrades : Array[Upgrade]):

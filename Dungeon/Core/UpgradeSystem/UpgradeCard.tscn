@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://xraqx0ukwbji"]
-
-[ext_resource type="Script" uid="uid://n4pkorlxbdqq" path="res://Core/UpgradeSystem/UpgradeDisplay.gd" id="1_rblpa"]
+[gd_scene load_steps=2 format=3 uid="uid://xraqx0ukwbji"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rblpa"]
 size = Vector2(200, 300)
@@ -19,7 +17,6 @@ offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = SubResource("PlaceholderTexture2D_rblpa")
-script = ExtResource("1_rblpa")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
