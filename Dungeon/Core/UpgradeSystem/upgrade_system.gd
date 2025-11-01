@@ -30,7 +30,7 @@ static func load_upgrades() -> Array[Upgrade]:
 	var upgrades : Array[Upgrade] = []
 	for entry in parsed:
 		var upgrade := Upgrade.new()
-		upgrade.ability_name = entry.get("ability_name", "")
+		upgrade.name = entry.get("name", "")
 		upgrades.append(upgrade)
 
 	return upgrades
