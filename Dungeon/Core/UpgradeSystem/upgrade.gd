@@ -1,6 +1,11 @@
 class_name Upgrade
 
+var text : String = ""
 
-@export var name : StringName = ""
+func _init():
+	push_error("Class must implement _init()")
 
+
+func do_upgrade(_to_upgrade : StatsComponent):
+	push_error("Class must implement do_upgrade()")
 

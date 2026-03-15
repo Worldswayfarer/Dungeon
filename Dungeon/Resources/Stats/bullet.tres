@@ -5,11 +5,11 @@
 [resource]
 script = ExtResource("1_w6otm")
 type = "spell_bullet"
-damage = 10
+damage = 2
 damage_multiplier = 1
 speed = 500
 speed_multiplier = 1
-current_health = 10
-maximum_health = 10
-health_multiplier = 1
+current_health = 0
+maximum_health = 0
+health_multiplier = 0
 metadata/_custom_type_script = "uid://bujq2kg01bb4w"

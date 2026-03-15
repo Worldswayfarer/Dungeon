@@ -5,6 +5,7 @@ extends Node
 @onready var factory = get_node("/root/main/ObjectFactory")
 @onready var room = get_node("/root/main/Room")
 @onready var skill_tree = get_node("/root/main/SkillTree")
+@onready var player_path = "/root/main/ObjectFactory/Player"
 
 # Scenes
 var portal = preload("res://Core/RoomManagement/portal.tscn")

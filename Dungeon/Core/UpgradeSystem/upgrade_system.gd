@@ -5,7 +5,7 @@ class_name UpgradeSystem
 var _upgrades : Array[Upgrade] = []
 
 func _ready():
-	_upgrades = load_upgrades()
+	_upgrades = [ProjectileUpgrade.new()]
 
 
 
@@ -30,7 +30,6 @@ static func load_upgrades() -> Array[Upgrade]:
 	var upgrades : Array[Upgrade] = []
 	for entry in parsed:
 		var upgrade := Upgrade.new()
-		upgrade.name = entry.get("name", "")
 		upgrades.append(upgrade)
 
 	return upgrades

@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cqbc76drxbsnd" path="res://Core/UpgradeSystem/UpgradeCard.gd" id="1_s3ane"]
 
-[node name="Upgrade" type="Button" unique_id=1361747225]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rblpa"]
+size = Vector2(200, 300)
+
+[node name="Upgrade" type="TextureButton" unique_id=1473444624]
 custom_minimum_size = Vector2(200, 300)
 anchors_preset = 8
 anchor_left = 0.5
@@ -15,6 +18,7 @@ offset_right = 100.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+texture_normal = SubResource("PlaceholderTexture2D_rblpa")
 script = ExtResource("1_s3ane")
 
 [node name="Label" type="Label" parent="." unique_id=319767882]

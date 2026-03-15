@@ -17,11 +17,15 @@ func _ready():
 	
 	Signals.player_death.connect(end_game)
 	Signals.restart_game.connect(restart_game)
+	Signals.end_of_wave.connect(display_upgrades)
 
 
 func end_game():
 	Signals.pause_game.emit()
 
+
+func display_upgrades():
+	Signals.display_upgrades.emit(_upgrade_system)
 
 func restart_game():
 	_factory.cleanup()

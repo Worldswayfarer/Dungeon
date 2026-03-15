@@ -10,3 +10,4 @@ class_name Stats
 @export	var current_health = 10
 @export var maximum_health = 10
 @export var health_multiplier = 1
+@export var projectiles = 1

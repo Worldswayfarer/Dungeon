@@ -3,6 +3,7 @@ class_name STATS
 
 const DAMAGE: StringName = &"damage"
 const DAMAGE_MULTIPLIER : StringName = &"damage_multiplier"
+const PROJECTILES: StringName = &"projectiles"
 
 const HEALTH_CURRENT: StringName = &"health_current"
 const HEALTH_MAXIMUM: StringName = &"health_maximum"

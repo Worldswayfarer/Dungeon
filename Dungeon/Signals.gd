@@ -22,7 +22,7 @@ signal restart_game()
 
 # Upgrades
 signal upgrade_selected(upgrade : Upgrade)
-signal display_upgrades(upgrades: Array[Upgrade])
+signal display_upgrades(upgrades: UpgradeSystem)
 
 
 var signals = [
