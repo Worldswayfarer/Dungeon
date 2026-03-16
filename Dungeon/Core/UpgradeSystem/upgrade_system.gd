@@ -7,15 +7,20 @@ var _upgrades : Array[Upgrade] = []
 func _ready():
 	_upgrades = [ProjectileUpgrade.new()]
 
+func get_upgrades() -> Array[Upgrade]:
+	return _upgrades
+
+func remove_upgrade(upgrade : Upgrade):
+	_upgrades.erase(upgrade)
 
 
-func give_upgrade() -> Upgrade:
+'func give_upgrade() -> Upgrade:
 	var idx = randi_range(0, len(_upgrades) - 1)
-	return _upgrades[idx]
+	return _upgrades[idx]'
 
 
 
-static func load_upgrades() -> Array[Upgrade]:
+'static func load_upgrades() -> Array[Upgrade]:
 	var path : String = "res://Data/Upgrades/first.json/"
 	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null:
@@ -33,3 +38,4 @@ static func load_upgrades() -> Array[Upgrade]:
 		upgrades.append(upgrade)
 
 	return upgrades
+'

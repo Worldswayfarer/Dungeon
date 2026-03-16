@@ -23,4 +23,5 @@ static func load_stats(type : StringName) -> Dictionary[StringName, float]:
 	_stats[STATS.HEALTH_CURRENT] = _base_stats.current_health
 	_stats[STATS.HEALTH_MAXIMUM] = _base_stats.maximum_health
 	_stats[STATS.HEALTH_MULTIPLIER] = _base_stats.health_multiplier
+	_stats[STATS.PROJECTILES] = _base_stats.projectiles
 	return _stats
