@@ -1,6 +1,6 @@
 extends Node
 
-class_name  Hit_Effects
+class_name  HitEffects
 
 func apply_effects(target, effects : Array[Effect]):
 	for effect in effects:

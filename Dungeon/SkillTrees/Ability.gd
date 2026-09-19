@@ -1,6 +1,9 @@
 class_name Ability
 var _effects = []
 
+func effect():
+	return _effects
+
 func use(caster: Root, projectile, target : Vector2 = Vector2.ZERO, layer = 0b010, mask = 0b100):
 	var factory = References.factory
 	var caster_stats : StatsComponent = caster.get_component(Enums.ComponentTypes.STATS)
