@@ -1,7 +1,7 @@
 class_name Ability
 var _effects = []
 
-func effect():
+func effects():
 	return _effects
 
 func use(caster: Root, projectile, target : Vector2 = Vector2.ZERO, layer = 0b010, mask = 0b100):
@@ -16,7 +16,7 @@ func use(caster: Root, projectile, target : Vector2 = Vector2.ZERO, layer = 0b01
 		var damage_effect = DamageEffect.new(1)
 		damage_effect.scale(new_projectile)
 		damage_effect.scale(caster)
-		var effects = [damage_effect]
+		var efcts = [damage_effect]
 
 		var new_target : Vector2 = target
 		if target == Vector2.ZERO:
@@ -26,4 +26,4 @@ func use(caster: Root, projectile, target : Vector2 = Vector2.ZERO, layer = 0b01
 			var phi = ((idx % 2) * 2 - 1)  * (idx/projectile_count) * 1/PI
 			var direction = new_target - caster.position
 			new_target = caster.position  + direction.rotated(phi)
-		logic.setup(caster.position, new_target, effects, layer, mask)
+		logic.setup(caster.position, new_target, efcts, layer, mask)
