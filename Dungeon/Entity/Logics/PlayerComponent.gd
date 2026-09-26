@@ -5,6 +5,8 @@ var _Movement : MovementComponentPhysics
 var _Abilities : AbilityComponent
 var _Stats : StatsComponent
 
+var _freeze_movement_input : bool = false
+
 func get_component_type() -> Enums.ComponentTypes:
 	return Enums.ComponentTypes.LOGIC
 
@@ -30,6 +32,9 @@ func emit_player_health():
 
 func handle_movement():
 	var direction = Vector2.ZERO
+	if _freeze_movement_input:
+		return
+
 	if Input.is_action_pressed("move_up"):
 		direction.y -= 1
 	elif Input.is_action_pressed("move_down"):
