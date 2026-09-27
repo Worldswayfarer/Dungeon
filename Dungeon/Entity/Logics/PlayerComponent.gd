@@ -1,7 +1,7 @@
 extends BaseComponent
 
 class_name PlayerComponent
-var _Movement : MovementComponentPhysics
+var movement : MovementComponentPhysics
 var _Abilities : AbilityComponent
 var _Stats : StatsComponent
 
@@ -11,7 +11,7 @@ func get_component_type() -> Enums.ComponentTypes:
 	return Enums.ComponentTypes.LOGIC
 
 func _ready():
-	_Movement = get_component(Enums.ComponentTypes.MOVEMENT_PHYSICS)
+	movement = get_component(Enums.ComponentTypes.MOVEMENT_PHYSICS)
 	_Abilities = get_component(Enums.ComponentTypes.ABILITY)
 	_Stats = get_component(Enums.ComponentTypes.STATS)
 	_parent.position = Vector2(1000, 500)
@@ -46,7 +46,7 @@ func handle_movement():
 		direction.x += 1
 	
 	
-	_Movement._direction = direction.normalized()
+	movement._direction = direction.normalized()
 	Signals.player_position_updated.emit(_parent.position)
 
 

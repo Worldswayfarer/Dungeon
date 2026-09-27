@@ -1,10 +1,18 @@
-class_name Ability
+class_name Shoot
+
+extends Ability
+
 var _effects = []
+
+var projectile = IDS.SPELL_BULLET
 
 func effects():
 	return _effects
 
-func use(caster: Root, projectile, target : Vector2 = Vector2.ZERO, layer = 0b010, mask = 0b100):
+func _init(type: StringName) -> void:
+	projectile = type
+
+func use(caster: Root, target : Vector2 = Vector2.ZERO, layer = 0b010, mask = 0b100):
 	var factory = References.factory
 	var caster_stats : StatsComponent = caster.get_component(Enums.ComponentTypes.STATS)
 	var projectile_count = caster_stats.get_stat(STATS.PROJECTILES)

@@ -3,8 +3,8 @@ extends BaseComponent
 class_name AbilityComponent
 
 
-var abilities = {}
-var _ability_slots = []
+var abilities : Dictionary[StringName, Skill] = {}
+var _ability_slots : Array[StringName] = []
 
 
 func get_component_type() -> Enums.ComponentTypes:

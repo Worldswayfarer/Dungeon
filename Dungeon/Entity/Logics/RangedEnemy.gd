@@ -8,16 +8,16 @@ var _max_timer :float = 5.0
 var _shooting_distance : float = 400
 
 
-var _shooter : Ability = Ability.new()
+var _shooter : Shoot = Shoot.new(IDS.SPELL_BULLET)
 
 var _target : Vector2 = Vector2.ZERO
-var _Movement : MovementComponentPhysics
+var movement : MovementComponentPhysics
 
 func get_component_type() -> Enums.ComponentTypes:
 	return Enums.ComponentTypes.LOGIC
 
 func _ready():
-	_Movement = get_component(Enums.ComponentTypes.MOVEMENT_PHYSICS)
+	movement = get_component(Enums.ComponentTypes.MOVEMENT_PHYSICS)
 	Signals.player_position_updated.connect(change_direction)
 
 
@@ -30,7 +30,7 @@ func _process(delta):
 	if !_target:
 		return
 	if _damage_timer <= 0:
-		_shooter.use(_parent, IDS.SPELL_BULLET, _target, 0b100, 0b010)
+		_shooter.use(_parent, _target, 0b100, 0b010)
 		_damage_timer = _max_timer
 
 
@@ -39,4 +39,4 @@ func change_direction(player_position : Vector2):
 	var direction = (player_position - _parent.position).normalized()
 	if (player_position - _parent.position).length() < _shooting_distance:
 		direction = -direction
-	_Movement.change_direction(direction)
+	movement.change_direction(direction)
